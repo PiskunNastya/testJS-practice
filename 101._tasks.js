@@ -283,13 +283,13 @@ rotate([1,2,3,4,5,6,7], 3);
 
 // 11) Заполните массив 10-ю случайными числами от 11 до 20 с помощью цикла.
 
-var arr = [];
-var max = 20;
-var min = 11;
+// var arr = [];
+// var max = 20;
+// var min = 11;
 
-for(var i = 1; i <= 10; i += 1) {
-    var x = Math.floor(Math.random() * (max - min + 1)) + min;
-    // console.log(x);
-    arr.push(x);
-    console.log(arr);
-}
+// for(var i = 1; i <= 10; i += 1) {
+//     var x = Math.floor(Math.random() * (max - min + 1)) + min;
+//     // console.log(x);
+//     arr.push(x);
+//     console.log(arr);
+// }
