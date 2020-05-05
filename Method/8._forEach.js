@@ -59,11 +59,11 @@ alert('forEach');
 
 // 2. Дан массив с числами. Найдите сумму этих чисел.
 
-// var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-// var accumulate = 0;
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var accumulate = 0;
 
-// arr.forEach((currentValue) => {
-//     accumulate += currentValue;
-// });
+arr.forEach((currentValue) => {
+    accumulate += currentValue;
+});
 
-// console.log(accumulate);
+console.log(accumulate);
