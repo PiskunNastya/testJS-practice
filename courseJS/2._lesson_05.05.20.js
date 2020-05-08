@@ -6,62 +6,50 @@ alert('2._lesson_05.05.20.js');
 // вывод fizzbuzz вместо чисел, кратных как 3, так и 5.
 
 
-// ВОПРОС: не понимаю как правильно вписать в функцию return, что б не возвращало undefined.
+function func(num) {
 
-// 1.1 вывод fizz вместо чисел, кратных 3;
+    var i;
+    for(i = 1; i <= num; i += 1) {
+        // console.log(i);
 
-    // function fizz(num) {
+        if(i % 3 !== 0 && i % 5 !== 0) {
+            console.log(i);
+        } else {
 
-    //     var i;
-    //     for(i = 1; i <= num; i += 1) {
-    //         if(i !== 3 && i % 3 !== 0) {
-    //             console.log(i);
-    //         }
+            if(i % 3 === 0 && i % 5 !== 0) {
+                console.log('fizz - вместо кратных 3');
+            }
 
-    //     }
-    // }
+            if(i % 5 === 0 && i % 3 !== 0) {
+                console.log('buzz - вместо кратных 5');
+            }
 
-    // console.log(fizz(9));
-    // console.log(fizz(21));
+            if(i % 3 === 0 && i % 5 === 0) {
+                console.log('fizzbuzz - вместо кратных 3 и 5');
+            }
 
+            
 
+        }
 
-// 1.2 вывод buzz вместо чисел, кратных 5;
+    }
 
-    // function buzz(num) {
+}
 
-    //     var i = 1;
-    //     while(i <= num) {
-    //         if(i !== 5 && i % 5 !== 0) {
-    //             console.log(i)
-    //         }
-    //         i += 1;
-    //     }
-
-    // }
-
-    // console.log(buzz(25));
-    // console.log(buzz(10));
+// console.log(func(30));
+console.log(func(60));
 
 
 
-    // 1.3 вывод fizzbuzz вместо чисел, кратных как 3, так и 5.
 
-    // function fizzbuzz(num) {
 
-    //     var i;
-    //     for(i = 0; i <= num; i += 1) {
-    //         if(i !== 3 &&
-    //            i !== 5 && 
-    //            i % 3 !== 0 && 
-    //            i % 5 !== 0) {
-    //             console.log(i);
-    //         }
-    //     }
-    // }
 
-    // // console.log(fizzbuzz(20));
-    // console.log(fizzbuzz(40));
+
+
+
+
+
+
 
 
 
@@ -116,29 +104,46 @@ alert('2._lesson_05.05.20.js');
 // P.S. Код также должен легко модифицироваться для любых других интервалов. (используйте функции)
 
 
-function func(n) {
+// function func(n) {
 
-    nextPrimef:
-    for (let i = 2; i <= n; i++) { // Для всех i...
+//     nextPrimef:
+//     for (let i = 2; i <= n; i++) { // Для всех i...
 
-        for (let j = 2; j < i; j++) { // проверить, делится ли число..
-            if (i % j == 0) continue nextPrimef; // не подходит, берём следующее
-        }
+//         for (let j = 2; j < i; j++) { // проверить, делится ли число..
+//             if (i % j == 0) continue nextPrimef; // не подходит, берём следующее
+//         }
 
-        console.log(i);
-        //debugger;
-    }
+//         console.log(i);
+//         //debugger;
+//     }
 
-}
+// }
 
-console.log(func(7));
-
-
+// console.log(func(7));
 
 
 
 
 
+
+
+// function func(n) {
+
+//     nextPrimef:
+//     for (let i = 2; i <= n; i++) { // Для всех i...
+
+//         for (let j = 2; j < i; j++) { // проверить, делится ли число..
+//             if (i % j == 0) continue nextPrimef; // не подходит, берём следующее
+            
+//         }
+
+//         console.log(i);
+//         //debugger;
+//     }
+
+// }
+
+// console.log(func(7));
 
 
 
@@ -273,3 +278,71 @@ console.log(func(7));
 //     else if (i != 2) flag = 0;
 //     if (flag==1) {console.log(i);}
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+// ВОПРОС: не понимаю как правильно вписать в функцию return, что б не возвращало undefined.
+
+// 1.1 вывод fizz вместо чисел, кратных 3;
+
+    // function fizz(num) {
+
+    //     var i;
+    //     for(i = 1; i <= num; i += 1) {
+    //         if(i !== 3 && i % 3 !== 0) {
+    //             console.log(i);
+    //         }
+
+    //     }
+    // }
+
+    // console.log(fizz(9));
+    // console.log(fizz(21));
+
+
+
+// 1.2 вывод buzz вместо чисел, кратных 5;
+
+    // function buzz(num) {
+
+    //     var i = 1;
+    //     while(i <= num) {
+    //         if(i !== 5 && i % 5 !== 0) {
+    //             console.log(i)
+    //         }
+    //         i += 1;
+    //     }
+
+    // }
+
+    // console.log(buzz(25));
+    // console.log(buzz(10));
+
+
+
+    // // 1.3 вывод fizzbuzz вместо чисел, кратных как 3, так и 5.
+
+    // function fizzbuzz(num) {
+
+    //     var i;
+    //     for(i = 0; i <= num; i += 1) {
+    //         if(i !== 3 &&
+    //            i !== 5 && 
+    //            i % 3 !== 0 && 
+    //            i % 5 !== 0) {
+    //             console.log(i);
+    //         }
+    //     }
+    // }
+
+    // // console.log(fizzbuzz(20));
+    // console.log(fizzbuzz(40));
