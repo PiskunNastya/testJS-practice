@@ -140,21 +140,21 @@ alert('reduce');
 
 
 
-function fank(arr) {
+// function fank(arr) {
 
-    var result = arr.reduce(function(accumulator, currentValue) {
-        if(accumulator > 10) {
-            return accumulator;
-        } else {
-            return accumulator + currentValue;
-        }
-    });
+//     var result = arr.reduce(function(accumulator, currentValue) {
+//         if(accumulator > 10) {
+//             return accumulator;
+//         } else {
+//             return accumulator + currentValue;
+//         }
+//     });
 
-    return result;
+//     return result;
 
-}
+// }
 
-console.log(fank([1, 2, 5, 1, 4, 5, 3]));
+// console.log(fank([1, 2, 5, 1, 4, 5, 3]));
 
 
 
@@ -166,3 +166,9 @@ console.log(fank([1, 2, 5, 1, 4, 5, 3]));
 
 
 // 5. Дан массив с числами. Узнайте сколько элементов с конца массива надо сложить, чтобы в сумме получилось больше 10-ти.
+
+function funk(arr) {
+
+}
+
+console.log(fank([1, 2, 5, 1, 4, 5, 3]));
