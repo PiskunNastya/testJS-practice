@@ -28,3 +28,23 @@ alert('cycle');
 //     console.log(arr[i]);
 // }
 
+
+
+
+// 3
+var object = {
+    name: 'ololo',
+    age: 150,
+    isTrue: true
+}
+
+for(prop in object) {
+    if(object.hasOwnProperty(prop)) {
+        if(typeof object[prop] === 'string') {
+            delete object[prop];
+        }
+    }
+}
+
+console.log(object);
+

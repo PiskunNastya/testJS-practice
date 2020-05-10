@@ -6,44 +6,71 @@ alert('2._lesson_05.05.20.js');
 // вывод fizzbuzz вместо чисел, кратных как 3, так и 5.
 
 
-function func(num) {
+// 1.1
 
-    var i;
-    for(i = 1; i <= num; i += 1) {
-        // console.log(i);
+// function func(num) {
 
-        if(i % 3 !== 0 && i % 5 !== 0) {
-            console.log(i);
-        } else {
+//     var i;
+//     for(i = 1; i <= num; i += 1) {
+//         // console.log(i);
 
-            if(i % 3 === 0 && i % 5 !== 0) {
-                console.log('fizz - вместо кратных 3');
-            }
+//         if(i % 3 !== 0 && i % 5 !== 0) {
+//             console.log(i);
+//         } else {
 
-            if(i % 5 === 0 && i % 3 !== 0) {
-                console.log('buzz - вместо кратных 5');
-            }
+//             if(i % 3 === 0 && i % 5 !== 0) {
+//                 console.log('fizz - вместо кратных 3');
+//             }
 
-            if(i % 3 === 0 && i % 5 === 0) {
-                console.log('fizzbuzz - вместо кратных 3 и 5');
-            }
+//             if(i % 5 === 0 && i % 3 !== 0) {
+//                 console.log('buzz - вместо кратных 5');
+//             }
+
+//             if(i % 3 === 0 && i % 5 === 0) {
+//                 console.log('fizzbuzz - вместо кратных 3 и 5');
+//             }
+
+//         }
+
+//     }
+
+// }
+
+// console.log(func(15));
+// console.log(func(30));
+// console.log(func(60));
+
+
+
+// 1.2
+
+// function func(num) {
+
+//     var i;
+//     for(i = 1; i <= num; i += 1) {
+//         // console.log(i);
+
+//         if(i % 3 === 0 && i % 5 === 0) {
+//             console.log('fizzbuzz - вместо кратных 3 и 5');
+//         } else if (i % 3 === 0 && i % 5 !== 0) {
+//            console.log('fizz - вместо кратных 3');
+//         } else if (i % 5 === 0 && i % 3 !== 0) {
+//             console.log('buzz - вместо кратных 5');
+//         } else {
+//             console.log(i);
+//         }
 
             
 
-        }
+         
 
-    }
+//     }
 
-}
+// }
 
-// console.log(func(30));
-console.log(func(60));
-
-
-
-
-
-
+// console.log(func(15));
+// // console.log(func(30));
+// // console.log(func(60));
 
 
 
@@ -121,32 +148,44 @@ console.log(func(60));
 
 // console.log(func(7));
 
+// // твоя
+// function primeNumbers (num) {
+//     primeNumbersNext:
+//     for(var i = 2; i <= num; i += 1) {
+//         for(var a = 2; a < i; a += 1) {
+//             if(i % a === 0) continue primeNumbersNext;
+//         }
+//         console.log(a);
+//         }
+        
+//     }
+
+//  primeNumbers(11);
 
 
 
-
-
-
+// моя
 // function func(n) {
 
 //     nextPrimef:
 //     for (let i = 2; i <= n; i++) { // Для всех i...
 
-//         for (let j = 2; j < i; j++) { // проверить, делится ли число..
-//             if (i % j == 0) continue nextPrimef; // не подходит, берём следующее
-            
+//         for (var j = 2; j < i; j++) { // проверить, делится ли число..
+//             // if (i % j == 0) continue nextPrimef; // не подходит, берём следующее
+//             console.log(i);
+//             // console.log(j);
 //         }
 
-//         console.log(i);
-//         //debugger;
+//         // console.log(i);
+//         // console.log(j);
+//         // debugger;
 //     }
 
 // }
 
-// console.log(func(7));
+// console.log(func(11)); // вызывает в консоле undefined
 
-
-
+// // метки!!
 
 
 
@@ -172,30 +211,30 @@ console.log(func(60));
 // практика....неверно
 
 // function simpleNumbers(num) {
-//     // var x = 0;
+//     var x = 0;
 
-//     // var i;
-//     // for(i = 2; i <= num; i += 1) {
-//     //     x++;
+//     var i;
+//     for(i = 2; i <= num; i += 1) {
+//         x++;
 
-//     //     if(i === 2) {    
-//     //         console.log(i);
-//     //     } else if(i % x !== 0) {
-//     //         console.log(i);
-//     //     } 
-//     // }
+//         if(i === 2) {    
+//             console.log(i);
+//         } else if(i % x !== 0) {
+//             console.log(i);
+//         } 
+//     }
 
 
-//     // for (let i = 2; i <= num; i++) {
-//     //   for (let j = 2; j <= i; j++) {
-//     //     if ((i % j == 0) && (j != i)) {
-//     //       break;
-//     //     } else {
-//     //       console.log(i);
-//     //       break;
-//     //     }
-//     //   }
-//     // }
+//     for (let i = 2; i <= num; i++) {
+//       for (let j = 2; j <= i; j++) {
+//         if ((i % j == 0) && (j != i)) {
+//           break;
+//         } else {
+//           console.log(i);
+//           break;
+//         }
+//       }
+//     }
 
 
 //     for (var i = 2; i <= 1000; i++) {
@@ -206,19 +245,19 @@ console.log(func(60));
 //       }
 
 
-//     // var x;
-//     // for(x = num; x >= 2; x -= 1) {
+//     var x;
+//     for(x = num; x >= 2; x -= 1) {
 
-//     //     if(num % x !== 0) {    
-//     //         console.log(x);
+//         if(num % x !== 0) {    
+//             console.log(x);
 
-//     //     }
+//         }
 
-//     // }
+//     }
 
 // }
 
-// // console.log(simpleNumbers(5));
+// console.log(simpleNumbers(5));
 // console.log(simpleNumbers(25));
 
 // if(num % i !== 0) {    
