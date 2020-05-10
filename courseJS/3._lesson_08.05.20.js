@@ -2,15 +2,14 @@ alert('3._lesson_08.05.20.js');
 
 // 1. Первая задача на Freecodecamp - Convert Celsius to Fahrenheit (раздел Basic Algorithm Scripting)
 // https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/convert-celsius-to-fahrenheit
-// Переведите с Сельсия в Фаренгейт
+// Переведите с цельсия в фаренгейт
 
-// function convertToF(celsius) {
-//     var fahrenheit = (celsius * (9 / 5)) + 32;
+function convertToF(celsius) {
+    var fahrenheit = (celsius * (9 / 5)) + 32;
 
-//     // return fahrenheit;
-
-//     console.log(fahrenheit);
-//   }
+    // return fahrenheit;
+    console.log(fahrenheit);
+  }
   
 
 //   convertToF(0);    // should return a number
@@ -137,27 +136,27 @@ alert('3._lesson_08.05.20.js');
 
 
 
-function repeatStringNumTimes(str, num) {
+// function repeatStringNumTimes(str, num) {
 
-    var result = '';
+//     var result = '';
 
-    for(i = 0; i <= num - 1; i += 1) {
-        result += str;
-    }
+//     for(i = 0; i <= num - 1; i += 1) {
+//         result += str;
+//     }
 
 
-    // return result;
-    console.log(result);
-  }
+//     return result;
+//     // console.log(result);
+//   }
 
-repeatStringNumTimes("*", 3); // should return "***"
+// repeatStringNumTimes("*", 3); // should return "***"
 // repeatStringNumTimes("abc", 3); // should return "abcabcabc"
 // repeatStringNumTimes("abc", 4); // should return "abcabcabcabc"
 // repeatStringNumTimes("abc", 1); // should return "abc"
 // repeatStringNumTimes("*", 8); // should return "********"
-repeatStringNumTimes("abc", -2); // should return ""
+// repeatStringNumTimes("abc", -2); // should return ""
 // // The built-in repeat() method should not be used.
-repeatStringNumTimes("abc", 0); // should return ""
+// repeatStringNumTimes("abc", 0); // should return ""
 
 
 
