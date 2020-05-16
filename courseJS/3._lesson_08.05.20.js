@@ -4,12 +4,14 @@ alert('3._lesson_08.05.20.js');
 // https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/convert-celsius-to-fahrenheit
 // Переведите с цельсия в фаренгейт
 
-function convertToF(celsius) {
-    var fahrenheit = (celsius * (9 / 5)) + 32;
+// 1.1
 
-    // return fahrenheit;
-    console.log(fahrenheit);
-  }
+// function convertToF(celsius) {
+//     var fahrenheit = (celsius * (9 / 5)) + 32;
+
+//     // return fahrenheit;
+//     console.log(fahrenheit);
+//   }
   
 
 //   convertToF(0);    // should return a number
@@ -22,6 +24,25 @@ function convertToF(celsius) {
 // = (30 * (9/5)) + 32   = 86
 
 
+
+// 1.2 верно
+
+function convertToF(celsius) {
+
+    return celsius * (9 / 5) + 32;
+   
+  }
+  
+
+//   convertToF(0);    // should return a number
+//   convertToF(-30);   // should return a value of -22
+//   convertToF(-10);  // should return a value of 14
+//   convertToF(0);    // should return a value of 32
+//   convertToF(20);   // should return a value of 68
+//   convertToF(30);   // should return a value of 86
+  console.log(convertToF(30));   // should return a value of 86
+
+// = (30 * (9/5)) + 32   = 86
 
 
 
