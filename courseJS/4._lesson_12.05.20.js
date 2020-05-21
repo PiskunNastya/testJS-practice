@@ -101,7 +101,7 @@ alert('4._lesson_12.05.20.js');
 // 2. Дан массив [1, 2, 3, 4, 5, 6]. Найдите сумму чисел рекурсивно.
 
 
-// ---2.1---__________________________________declarative___________________ВЕРНО СЧИТАЕТ___________________________________________
+// ---2.1---__________________________________declarative______________________________________________________________
 
 
 // function func(arr) {
@@ -231,7 +231,7 @@ alert('4._lesson_12.05.20.js');
 
 // 3. Freecodecamp - Factorialize a Number, 
 // 3.1 Find the Longest Word in a String, 
-// 3.2 Return Largest Numbers in Arrays, 
+// 3.2   
 // 3.3 Confirm the Ending. 
 // Постарайтесь решить задачи императивно и декларативно, где это возможно.
 
@@ -264,7 +264,7 @@ alert('4._lesson_12.05.20.js');
    
 //    var longestWord = 0;
 
-
+  
 //    for(i = 0; i <= len_i; i += 1) {
 
 //         if(longestWord < newArr[i].length) {
@@ -285,12 +285,12 @@ alert('4._lesson_12.05.20.js');
 
 // ---3.3---__________________________________Confirm the Ending_______________________________________________________
 
-function confirmEnding(str, target) {
-    return str.endsWith(target) ? true : false;
-  }
+// function confirmEnding(str, target) {
+//     return str.endsWith(target) ? true : false;
+//   }
   
-  console.log(confirmEnding("Bastian", "n"));
-  console.log(confirmEnding("Bastian", "o"));
+//   console.log(confirmEnding("Bastian", "n"));
+//   console.log(confirmEnding("Bastian", "o"));
 
 //_____________________________________________________________________________________________________________________
 
@@ -316,3 +316,68 @@ function confirmEnding(str, target) {
 // }
 
 // console.log(haveFun(func1(), func2()));
+
+
+
+//____________________________________________________________
+
+
+// function anon1() {
+//     return 3;
+// }
+
+// function anon2() {
+//     return 4;
+// }
+
+// function haveFun() {
+
+//     return anon1() + anon2();
+
+// }
+
+
+
+// console.log(haveFun());
+
+//____________________________________________________________
+
+
+// function anon1() {
+//     return 3;
+// }
+
+// function anon2() {
+//     return 4;
+// }
+
+// function haveFun(param1, param2) {
+
+//     return param1() + param2();
+
+// }
+
+
+
+// console.log(haveFun(anon1, anon2));
+
+
+//____________________________________________________________
+
+// function anon1() {
+//     return 3;
+// }
+
+// function anon2() {
+//     return 4;
+// }
+
+// function haveFun(param1, param2) {
+
+//     return param1 + param2;
+
+// }
+
+
+
+// console.log(haveFun(anon1(), anon2()));
