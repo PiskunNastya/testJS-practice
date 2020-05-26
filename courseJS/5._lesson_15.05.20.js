@@ -257,35 +257,35 @@ alert('5._lesson_15.05.20.js');
 // //   console.log(findLongestWordLength("What if we try a super-long word such as otorhinolaryngology")); // should return 19.
 
 
-//________________________________________________________________________________________________________________
+//________________________________________________________________________________________________________________ ПОКА ЧТО ПОД ВОПРОСОМ, подумаю как вывести длину слова, после разбора новой темы
 
-function findLongestWordLength(text) {
-    var accumulator = ' ';
-    var word = ' ';
-    var i;
-    // console.log('Start');
-    // text = toString(text);
-    for(i = 0; i < text.length ; i += 1) {
-        // debugger;
-        if(text[i] !== ' ') {
-            word += text[i];
-            // console.log(text[i]);
-            // console.log(word)
-        } else {
-            if(accumulator.length < word.length) {
-                accumulator = word;
-                word = ' ';
-            } else {
-                word = ' ';
-            }
-        }
-    }
-    return accumulator;
-}
+// function findLongestWordLength(text) {
+//     var accumulator = ' ';
+//     var word = ' ';
+//     var i;
+//     // console.log('Start');
+//     // text = toString(text);
+//     for(i = 0; i < text.length ; i += 1) {
+//         // debugger;
+//         if(text[i] !== ' ') {
+//             word += text[i];
+//             // console.log(text[i]);
+//             // console.log(word)
+//         } else {
+//             if(accumulator.length < word.length) {
+//                 accumulator = word;
+//                 word = ' ';
+//             } else {
+//                 word = ' ';
+//             }
+//         }
+//     }
+//     return accumulator;
+// }
 
-// end  = findLongestWordLength("The quick brown foxrrrrrrr jumped over the  lazy dog");
-// console.log(end); // should return 6.
-  console.log(findLongestWordLength("May the force be with you")); // should return 5.
+// // end  = findLongestWordLength("The quick brown foxrrrrrrr jumped over the  lazy dog");
+// // console.log(end); // should return 6.
+//   console.log(findLongestWordLength("May the force be with you")); // should return 5.
 //   console.log(findLongestWordLength("Google do a barrel roll")); // should return 6.
 //   console.log(findLongestWordLength("What is the average airspeed velocity of an unladen swallow")); // should return 8.
 //   console.log(findLongestWordLength("What if we try a super-long word such as otorhinolaryngology")); // should return 19.

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+</head>
+<body>
+
+    <form id="form" >
+        <input type="text">
+        <p id="validateEmail"></p>
+        <input type="password"> 
+        <p id="validatePassword"></p>
+        <button type="submit">Кнопка</button> 
+    </form>
+
+    <script>
+
+        var loginForm = document.getElementById('form');  // добираемся до самой формы
+        var emailInput = document.querySelector('[type=text]'); // добираемся до инпута с атрибутом type=text ЕМЕЙЛ
+        var passwordInput = document.querySelector('[type=password]'); // добираемся до инпута с атрибутом type=password ПАРОЛЬ
+        var validationForEmail = document.getElementById('validateEmail'); // добираемся до места где будет отображаться инфо про ВАЛИДАЦИЮ ЕМЕЙЛ
+        var validationForPassword = document.getElementById('validatePassword'); // добираемся до места где будет отображаться инфо про ВАЛИДАЦИЮ ПАРОЛЯ
+        var submitButton = loginForm.querySelector('[type=submit]'); //добираемся к кнопке. Переменная loginForm, есть родителем баттон у которого есть type=submit
+        var startInputDataEmail = false; // флаг-переключатель
+        var startInputDataPassword = false; // флаг-переключатель
+
+        validationForEmail.style.color = "red"; // меняем цвет на красный
+        validationForPassword.style.color = "red"; // меняем цвет на красный
+
+        submitButton.disabled = true; // делаем кнопку не активной, по умолчанию
+
+        var GodObj = {
+            // динамически записываю изменения значения startInputDataEmail. Или значение true, или false
+            // динамически записываю изменения значения startInputDataPassword. Или значение true, или false
+        }
+
+
+
+        function emailInputHandler(event) {// каждый раз, когда будут вноситься изменения в инпут ЕМЕЙЛ, будет выводиться в консоль бизнес логика функции
+
+            if(!event.target.value.includes('@')) { // если строка не содержит знак @, то:
+                validationForEmail.innerText = 'Email should contain @ symbol'; // выводиться текст
+                startInputDataEmail = false; // флаг-переключатель
+            } else {                                // если строка содержит знак @, то:
+                validationForEmail.innerText = 'ok';  // выводиться текст
+                startInputDataEmail = true; // флаг-переключатель
+            }
+
+            if (event.target.value.length === 0) { // если в поле ЕМЕЙЛ были введены данные и сразу все удалены (поле снова пустое), то:
+                validationForEmail.innerText = 'Please enter your email'; // выводиться текст
+                startInputDataEmail = false; // флаг-переключатель
+            } 
+
+            
+            GodObj.startEmail = startInputDataEmail; // динамически записываю изменения в GodObj. Или значение true, или false
+
+            if(GodObj.startEmail === true && GodObj.startPassword === true) {           // если в объекте два ключа (свойства) равно true, то:
+                submitButton.disabled = false;                                          // то блокировка кнопки снимаеться
+            } else if (!GodObj.startEmail === true || GodObj.startPassword === true) {  // если в объекте ключ (свойство) равно false, то:
+                submitButton.disabled = true;                                           // блокировка не снимаеться
+            } else if (GodObj.startEmail === true || !GodObj.startPassword === true) {  // если в объекте ключ (свойство) равно false, то:
+                submitButton.disabled = true;                                           // блокировка не снимаеться
+            }
+
+        }
+
+
+
+        function passwordInputHandler(event) {
+
+            if(event.target.value.length > 6) {   // если пароль будет больше 6, то:
+                validationForPassword.innerText = 'Maximum length of password should be 6 symbols'; // выводиться текст
+                startInputDataPassword = false; // флаг-переключатель
+            } else if (event.target.value.length === 0) { // если в поле ПАРОЛЬ были введены данные и сразу все удалены (поле снова пустое), то:
+                validationForPassword.innerText = 'Please enter password'; // выводиться текст
+                startInputDataPassword = false; // флаг-переключатель
+            } else {
+                validationForPassword.innerText = 'ook'; // выводиться текст
+                startInputDataPassword = true; // флаг-переключатель
+            }
+
+
+            GodObj.startPassword = startInputDataPassword; // динамически записываю изменения в GodObj. Или значение true, или false
+
+            if(GodObj.startEmail === true && GodObj.startPassword === true) {           // если в объекте два ключа (свойства) равно true, то:
+                submitButton.disabled = false;                                          // то блокировка кнопки снимаеться
+            } else if (!GodObj.startEmail === true || !GodObj.startPassword === true) { // если в объекте ключ (свойство) равно false, то:
+                submitButton.disabled = true;                                           // блокировка не снимаеться
+            }
+
+        }
+
+
+
+        function sendData(event) { 
+            event.preventDefault(); // предотвращает перезагрузку страницы при вводе пароля. Браузерное событие
+        }
+
+
+        loginForm.addEventListener('submit', sendData); // включаем прослушку тега form, с функцей
+        emailInput.addEventListener('input', emailInputHandler); // включаем прослушку тега input с абривиатурой type="text", поле ввода ЕМЕЙЛ
+        passwordInput.addEventListener('input', passwordInputHandler); // включаем прослушку тега input с абривиатурой type="password", поле ввода ПАРОЛЬ
+
+    </script>
+    
+</body>
+</html>
