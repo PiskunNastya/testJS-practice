@@ -554,3 +554,21 @@ passwordInput.addEventListener('input', passwordInputHandler);
     //     return sum;
     
     // }
+
+
+
+
+
+
+
+
+
+
+
+// var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// var min = arr[0];
+// var max = arr[arr.length - 1];
+
+
+// var random = Math.floor((Math.random() * max) + min);
+// console.log(random);

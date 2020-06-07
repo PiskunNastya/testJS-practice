@@ -62,8 +62,40 @@ alert('forEach');
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 var accumulate = 0;
 
-arr.forEach((currentValue) => {
+var x = arr.forEach((currentValue) => {
     accumulate += currentValue;
 });
 
+console.log(arr);
 console.log(accumulate);
+console.log(x);
+
+
+// var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+// var x = arr.forEach((currentValue) => {
+//     return currentValue + 10;
+// });
+
+// console.log(arr);
+// console.log(x);
+
+
+// var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+// var x = arr.forEach(currentValue => currentValue + 10);
+
+// console.log(arr);
+// console.log(x);
+
+
+
+// var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+// var x = arr.forEach(currentValue => console.log(currentValue + 10));
+
+// console.log(arr);
+// console.log(x);
