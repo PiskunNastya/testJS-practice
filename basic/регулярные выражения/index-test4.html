@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testJS-practice</title>
+    <style>
+        .form-inpyt {
+            display: block;
+            margin-top: 0.5rem;
+            padding: 0.375rem 0.75rem;
+            min-width: 250px;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            outline: none;
+        }
+        .form-inpyt_valid {
+            border: 1px solid #28a745;
+        }
+        .form-inpyt_invalid {
+            border: 1px solid #dc3545;
+        }
+    </style>
+</head>
+
+
+<body style='background: bisque;'>
+
+    <form>
+        <label for="password">Пароль:</label>
+        <input id="password" class="form-inpyt"> 
+        <!-- type="password"??? -->
+    </form>
+
+    <script>
+        var password = document.getElementById('password');
+        password.addEventListener('input', function(event) {
+            var regexp = /^.{8,16}$/;
+            var str = event.target.value;
+
+            var result = regexp.test(str);
+
+            if(result) {
+                event.target.classList.remove('form-inpyt_invalid'); //удаляем класс, если такой есть
+                event.target.classList.add('form-inpyt_valid'); // добавляем новый класс
+            } else {
+                event.target.classList.remove('form-inpyt_valid'); //удаляем класс, если такой есть
+                event.target.classList.add('form-inpyt_invalid'); // добавляем новый класс
+            }
+
+        });
+    </script>
+    
+</body>

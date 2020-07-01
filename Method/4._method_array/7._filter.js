@@ -257,3 +257,21 @@ alert('filter');
 // });
 
 // console.log(x);
+
+
+
+
+
+var arr = ['ololo', 20, 'foo', 33, 'soryan', 60];
+var filterArray = arr.filter(function(value) {
+    return typeof value === 'string' ? true : false;
+});
+
+console.log(arr);
+console.log(filterArray);
+
+arr.push('rack');
+filterArray.push('ppp');
+
+console.log(arr);
+console.log(filterArray);

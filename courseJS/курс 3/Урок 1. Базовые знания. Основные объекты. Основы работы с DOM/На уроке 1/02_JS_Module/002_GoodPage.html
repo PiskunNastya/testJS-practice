@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Пространство Имен</title>
+
+    <script src="002_FirstModule.js">
+        // Создание пустого объекта
+        var firstModule = {};
+
+        // Присвоение пустому объекту свойства
+        firstModule.name = "MODULE NAME_1_";
+
+        // Присвоение пустому объекту метода
+        firstModule.firstStart = function () {
+            console.log(firstModule.name + 1);
+        };
+    </script>
+    
+    <script src="002_SecondModule.js">
+        var secondModule = {};
+
+        secondModule.name = "MODULE NAME_2_";
+
+        secondModule.secondStart = function () {
+            console.log(secondModule.name + 2);
+        };
+    </script>
+
+    <script>
+        firstModule.firstStart();
+        secondModule.secondStart();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

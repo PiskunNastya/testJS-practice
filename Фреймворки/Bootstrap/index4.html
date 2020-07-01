@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+            crossorigin="anonymous">
+
+    <title>#3 - Система сеток и адаптивное меню</title>
+
+    <style>
+        #one {
+            background-color: rgb(76, 106, 240);
+        }
+
+        #two {
+            background-color: rgb(160, 45, 116);
+        }
+
+        /* __________________под компы включительно по 992 px__________________ */
+
+        #adaptive {
+            display: flex;
+        }
+
+        #one {
+            width: 50%;
+        }
+
+        #two {
+            width: 50%;
+        }
+
+        /* __________________под компы включительно по 992 px__________________ */
+
+        @media(max-width: 991px) {
+        #one {
+            width: 35%;
+        }
+
+        #two {
+            width: 65%;
+        }
+        }
+
+        @media(max-width: 767px) {
+        #one {
+            width: 80%;
+        }
+
+        #two {
+            width: 20%;
+        }
+        }
+
+        @media(max-width: 575px) {
+        #adaptive {
+            display: block;
+        } 
+
+        #one {
+            width: 100%;
+        }
+
+        #two {
+            width: 100%;
+        }
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <!-- <div class="row">
+        <div class="col-xp-12 col-sm-9 col-md-4 col-lg-6" style="background-color: #00CCFF">Первый</div>
+        <div class="col-xp-12 col-sm-3 col-md-8 col-lg-6" style="background-color: #CC00FF">Второй</div>
+    </div> -->
+
+    <!-- <div id="adaptive">
+        <div id="one">Первый</div>
+        <div id="two">Второй</div>
+    </div> -->
+
+    <!-- <div class="row">
+        <div class="col-lg-5 col-lg-push-7" style="background-color: #3b7280">Первый</div>
+        <div class="col-lg-7 col-lg-pull-5" style="background-color: #73477e">Второй</div>
+    </div>  -->
+
+    <!-- <div class="row">
+        <div class="col-lg-5 order-7" style="background-color: red">Первый</div>
+        <div class="col-lg-7 order-5" style="background-color: orange">Второй</div>
+    </div> -->
+
+    <!-- <div class="container">
+        <div class="row">
+             <div class="col-md-6 order-lg-1 order-sm-2" style="background-color: rgb(98, 182, 98)">111</div>
+             <div class="col-md-6 order-lg-2 order-sm-1" style="background-color: rgb(18, 72, 97)">222</div>
+        </div>
+    </div> -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"><img src="../../images/order1.jpg" alt=""></div>
+            <div class="col-md-2"><img src="../../images/order2.jpg" alt=""></div>
+            <div class="col-md-2"><img src="../../images/order3.jpg" alt=""></div>
+            <div class="col-md-2 order-first order-lg-0"><img src="../../images/order4.jpg" alt=""></div>
+            <div class="col-md-2"><img src="../../images/order5.jpg" alt=""></div>
+            <div class="col-md-2"><img src="../../images/order6.jpg" alt=""></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+             <div class="col-md-2" style="background-color: rgb(98, 182, 98)">111</div>
+             <div class="col-md-10" style="background-color: rgb(18, 72, 97)">
+                <div class="row">
+                    <div class="col-md-6" style="background-color: rgb(130, 98, 182)">111</div>
+                    <div class="col-md-6" style="background-color: rgb(97, 18, 73)">222</div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" 
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" 
+        crossorigin="anonymous"></script>
+</body>
+</html>

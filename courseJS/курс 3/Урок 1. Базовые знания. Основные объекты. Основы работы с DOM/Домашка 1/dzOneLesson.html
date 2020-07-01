@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>домашка к первому уроку</title>
+
+    <style>
+        #buttons {
+            display: flex;
+            flex-direction: column;
+            width: 20rem;
+        }
+
+        button {
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <section id="listOll">
+        <ul id="list">
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+            <li>List Item 4</li>
+            <li>List Item 5</li>
+        </ul>
+    </section>
+
+    <section id="buttons">
+        <button type="button" onclick="btn_firstItem()" id="firstItem">Выбрать первый элемент</button>
+        <button type="button" onclick="btn_lastItem()" id="lastItem">Выбрать последний элемент</button>
+        <button type="button" onclick="btn_nextItem()" id="nextItem">Выбрать следующий элемент</button>
+        <button type="button" onclick="btn_previousItem()" id="previousItem">Выбрать предыдущий элемент</button>
+        <button type="button" onclick="btn_addItem()" id="addItem">Добавить элемент</button>
+        <button type="button" onclick="btn_removeItem()" id="removeItem">Удалить элемент</button>
+        <button type="button" onclick="btn_addToStart()" id="addToStart">Добавить в начало</button>
+    </section>
+
+
+
+    <script>
+
+    var index = 0;
+
+        //функция выделяет самый первый элемент в списке красным
+        function btn_firstItem() {
+            var searchInId = document.getElementById('list');                   // записали в переменную родительский элемент списка
+            var collectionList = searchInId.getElementsByTagName('li');         // вытянули с родительского элемента коллекцию <li>, которая динамически обображаеться
+
+            for(var i = 0; i < collectionList.length; i += 1) {                 // перед переопределением первого элем, цвет обнуляеться
+                collectionList[i].style.color = 'black';
+            }
+                
+                  
+            collectionList[0].style.color = 'red';                              // цвет текста первого элемента, при клике, будет красным
+        }
+
+
+        //функция выделяет самый последний элемент в списке красным
+        function btn_lastItem() {
+            var searchInId = document.getElementById('list');                   // записали в переменную родительский элемент списка
+            var collectionList = searchInId.getElementsByTagName('li');         // вытянули с родительского элемента коллекцию <li>, которая динамически обображаеться
+
+            for(var i = 0; i < collectionList.length; i += 1) {                 // перед переопределением последнего элем, цвет обнуляеться
+                collectionList[i].style.color = 'black';
+            }
+
+            collectionList[collectionList.length - 1].style.color = 'red';      // цвет текста последнего элемента, при клике, будет красным
+        }
+
+
+        // функция по кругу выделяет следующий элемент и выделяет его зеленым
+        function btn_nextItem() {
+            var searchInId = document.getElementById('list');                   // записали в переменную родительский элемент списка
+            var collectionList = searchInId.getElementsByTagName('li');         // вытянули с родительского элемента коллекцию <li>, которая динамически обображаеться
+
+            var max = collectionList.length - 1;                                // максимальный объем списка, с учетом динамических изменений
+
+            if(index === 0) {                                                   // если индекс равно 0, то:
+                collectionList[max].style.background = 'white';                     // самый последний элем будет белым
+                collectionList[index++].style.background = 'green';                 // элем[0] будет зеленим, и сработает постфиксный инкремент
+            } else if (index < max) {                                           // если индекс меньше индекса последнего элем в коллекции, то:
+                collectionList[--index].style.background = 'white';                 // прошлий элемент закрашиваеться в белое
+                index = index + 1;                                                  // добавляем +1, так как сработал префиксный дикремент
+                collectionList[index++].style.background = 'green';                 // элем выделям зеленым и срабатывает постфиксный инкремент
+            } else if (index === max) {                                         // если индекс равно индексу последнего элем в коллекции
+                collectionList[--index].style.background = 'white';                // прошлий элемент закрашиваеться в белое 
+                index = index + 1;                                                 // добавляем +1, так как сработал префиксный дикремент
+                collectionList[index].style.background = 'green';                  // выделяем последний элем зеленым
+                index = 0;                                                         // перезапысываем индекс
+            } 
+        }
+
+
+        // функция по кругу выделяет предыдущий элемент и выделяет его зеленым
+        function btn_previousItem() {
+            var searchInId = document.getElementById('list');                   // записали в переменную родительский элемент списка
+            var collectionList = searchInId.getElementsByTagName('li');         // вытянули с родительского элемента коллекцию <li>, которая динамически обображаеться
+
+            var max = collectionList.length - 1;                                // максимальный объем списка
+
+            if(index === 0) {                                                   // если индекс равно, то:
+                collectionList[0].style.background = 'white';                       // елем за индексом 0 орашиваем в белое
+                collectionList[max].style.background = 'pink';                      // последний елем коллекции выделяем розовым
+                index = max;                                                        // переопределяем индекс
+            } else if (index <= max) {                                          // если индекс меньше или равно индексу последнего элем в коллекции
+                collectionList[index].style.background = 'white';                   // прошлий элемент закрашиваеться в белое
+                collectionList[--index].style.background = 'pink';                  // предыдущий вылеляем розовым
+            }
+        }
+
+
+        // функция добавляем в конец родительского элем ДОМ узел
+        function btn_addItem() {
+            var addChild = document.getElementById('list');                     // записали в переменную родительский элемент списка
+            var newItem = document.createElement('li');                         // создали элем
+            newItem.innerText = 'NEW ITEM';                                     // записали в элем текст
+            addChild.appendChild(newItem);                                      // в родительский элем вставили созданный элем
+        }
+
+
+        // функция удаляет последный элем в списке
+        function btn_removeItem() {
+            var searchInId = document.getElementById('list');                   // записали в переменную родительский элемент списка
+            var collectionList = searchInId.getElementsByTagName('li');         // вытянули с родительского элемента коллекцию <li>, которая динамически обображаеться
+            var lastItem = collectionList[collectionList.length - 1];           // определили в переменную последный элем в коллекции   
+
+            //______________________ТУТ ВОПРОС, ВЫДАЕТ ОШИБКУ В КОНСОЛЕ__________________________
+            while (collectionList.length >= 1) {                                // будет удалять элем пока не упреться в 1                       
+                // debugger;
+                searchInId.removeChild(lastItem); 
+            }
+
+            
+        }
+
+
+        // функция добавляем в начало родительского элем ДОМ узел
+        function btn_addToStart() {
+            var searchInId = document.getElementById('list');                 // записали в переменную родительский элемент списка
+            var collectionList = searchInId.getElementsByTagName('li');       // вытянули с родительского элемента коллекцию <li>, которая динамически обображаеться
+            var newItem = document.createElement('li');                       // создали элем
+            newItem.innerText = 'NEW ITEM';                                   // записали в элем текст
+            searchInId.insertBefore(newItem, collectionList[0]);              // вставили созданный элем перед самым первым элем в коллекции
+        }
+
+
+    </script>
+
+</body>
+</html>
