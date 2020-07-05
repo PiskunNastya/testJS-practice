@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li id="properties">1 ololo</li>
+        <li>2 ololo</li>
+        <li>3 ololo</li>
+    </ul>
+
+
+
+    <script>
+        var obj_li = document.querySelector('li');
+
+
+        for(key in obj_li) {
+            // console.log(key); // просто 292 свойства 
+            // console.log(obj_li); // просто <li id="properties">1 ololo</li> 292 раза
+            // console.log(obj_li[key]); // просто значения
+        }
+
+        console.dir(obj_li);
+        // console.log(obj_li)
+
+
+//_____________________________________________________________________________
+
+        // // получаем - s
+        // var str = 'dsada'; 
+
+        // // первый вариан
+        // var slice_1 = str[1];
+        // // console.log(slice_1);
+
+
+        // // первый вариан
+        // var slice_2 = str.substring(1, 2);
+        // // console.log(slice_2);
+        
+
+        // var slice_3 = str.slice(1, 2);
+        // // console.log(slice_3);
+
+        
+
+
+        // var str = 'dsada'; 
+        // var newStr = str.slice(-1);
+        // console.log(newStr);
+        // // в консоле выдаст последнюю букву в строке - a
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+
+</head>
+<body>
+    <hr>
+    <form>
+        <input type="text" id="text">
+        <br>
+        <input type="button" value='Add DIV' id="div" onclick="create(this.id)">
+        <input type="button" value='Add SPAN' id="span" onclick="create(this.id)">
+        <input type="button" value='Add LINK' id="a" onclick="create(this.id)">
+    </form>
+
+    <script>
+        var hr = document.getElementsByTagName('hr')[0];
+
+        function create(elemType) {
+            var text = document.getElementById('text'); // в момент нажатия на кнопку, берем тот текст который в инпуте
+            // console.log(text);
+
+            if(text.value) {
+                
+                var newElement = document.createElement(elemType);
+                newElement.innerText = text.value;
+                
+                if(elemType === 'a') {
+                    newElement.href = '#';
+                }
+
+                document.body.insertBefore(newElement, hr);
+            }
+
+            text.value = '';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>insertAdjacentText</title>
+    <script src="insertAdjacentFF.js"></script> <!-- Для FF -->
+</head>
+<body>
+    <div id="relTo" style="width:300px; background:#e0d0a0;">
+        Куда перемещаем.
+    </div>
+    <br /><br />
+    Выберите подходящий вариант
+    <select onchange="insertText(this);">
+        <option>beforeBegin</option>
+        <option>afterBegin</option>
+        <option>beforeEnd</option>
+        <option>afterEnd</option>
+    </select>
+
+
+
+    <script type="text/javascript">
+        function insertText(select) {
+            var selected = select.selectedIndex;
+            var where = select.options[selected].innerHTML; //получаем выбранный option
+
+            var relTo = document.getElementById("relTo");
+            var textToInsert = "Выбрана опция " + where + ".";
+
+            if (relTo.insertAdjacentText) {        // проверка на совместимость
+                relTo.insertAdjacentText(where, textToInsert);
+            } else {
+                alert ("В вашем браузере нету insertAdjacentText метода. Обновитесь!");
+            }
+        };
+    </script>
+
+    
+</body>
+</html>

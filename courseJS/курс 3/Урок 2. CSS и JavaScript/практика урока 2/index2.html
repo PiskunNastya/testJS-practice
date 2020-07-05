@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <p>ololo 1</p>
+    </div>
+
+    <div>
+        <p class="classOne classTwo">ololo 2</p>
+    </div>
+
+    <script>
+        var p = document.querySelector('.classOne');
+        var classList_p = p.classList;
+        console.log(classList_p); //псевдомассив 
+
+        var collection_div = document.getElementsByTagName('div');
+        console.log(collection_div); // живую коллекцию элементов
+
+    </script>
+
+</body>
+</html>

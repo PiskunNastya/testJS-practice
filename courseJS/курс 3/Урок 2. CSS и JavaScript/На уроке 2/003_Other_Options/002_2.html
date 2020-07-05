@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="p">Индекс выбранного элемента: 0</p>
+
+    <select id="select">
+        <option selected>Option A</option>
+        <option>Option B</option>
+        <option>Option C</option>
+        <option>Option D</option>
+        <option>Option E</option>
+    </select>
+
+
+    <script>
+        var selectElem = document.getElementById('select')
+        var pElem = document.getElementById('p')
+
+        // Когда выбран новый элемент <option>
+        // selectElem.addEventListener('change', function () {
+        //     var index = selectElem.selectedIndex;
+        //     // Добавить данные в <p>
+        //     pElem.innerHTML = 'selectedIndex: ' + index;
+        // });
+
+
+        selectElem.addEventListener('click', function () {
+            var index = selectElem.selectedIndex;
+            // Добавить данные в <p>
+            pElem.innerHTML = 'selectedIndex: ' + index;
+        });
+    </script>
+
+
+</body>
+
+</html>

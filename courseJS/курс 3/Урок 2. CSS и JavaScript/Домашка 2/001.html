@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Id and classes</title>
+    <style>
+        /* #id1 {
+            color: red;
+        } */
+        /* div.class1 {
+            color: blue;
+            font-size: 14px;
+            text-decoration: underline;
+        } */
+
+        div {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="id1">Title ololo</h1>
+    <div class="class1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla consequuntur, obcaecati recusandae enim
+        laboriosam eaque, sint incidunt. Perferendis mollitia incidunt blanditiis eveniet, fuga sapiente. Magni dicta
+        maxime fugiat sint soluta?
+    </div>
+
+    <script>
+
+// _____________________________________________________________________________________________________________________________
+// Перепишите все селекторы из первой папки 001_CSS_Selectors с помощью известных Вам методов и свойств.
+        var h1 = document.getElementById('id1');
+        var div = document.getElementsByTagName('div')[0];
+
+        h1.style.color = 'red';
+        div.style.cssText = `   color: blue; 
+                                font-size: 14px; 
+                                text-decoration: underline`;
+
+// _____________________________________________________________________________________________________________________________
+// В примере с классом добавьте к существующем классу, класс с именем newclass, а также выведите в консоль все 
+// стили что есть у элемента с этим классом
+
+
+
+        div.className += ' newclass';           // добавила новый класс
+        console.dir(div.style);    
+        
+        var styleDiv = getComputedStyle(div);
+        console.log(styleDiv);
+        console.log(styleDiv.backgroundColor);
+
+
+// _____________________________________________________________________________________________________________________________
+// В примере с индентификатором добавьте свойства marginTop с значением 10px и background с значением red  
+
+        h1.style.cssText = 'margin-top: 10px; background: red';
+
+
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+    38:00
+
+    Перепишите все селекторы из первой папки 001_CSS_Selectors с помощью известных Вам методов 
+    и свойств.
+
+    В примере с классом добавьте к существующем классу, класс с именем newclass, а также 
+    выведите в консоль все стили что есть у элемента с этим классом
+    
+    В примере с индентификатором добавьте свойства marginTop с значением 10px и background 
+    с значением red
+ -->

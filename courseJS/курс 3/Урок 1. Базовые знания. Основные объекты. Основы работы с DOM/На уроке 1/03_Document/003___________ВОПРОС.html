@@ -1,6 +1,7 @@
 <!-- document.getElementById - поиск елемента на странице по id -->
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Свойства объекта Document</title>
     <script>
@@ -12,20 +13,25 @@
         //     console.log(liCollection); 
         //   }
 
-        function getValue(){
+        function getValue() {
             var main = document.getElementById('main');
             var liCollection = main.getElementsByTagName('li');
-            console.log(liCollection); 
-          }
-
+            console.log(liCollection);
+        }
     </script>
 </head>
+
 <body>
 
     <h1 id="myHeader" onclick="getValue()">Click me!</h1>
     <div id="main">
-        <ul><li>1</li></ul>
+        <ul>
+            <li>1</li>
+        </ul>
     </div>
-    <ul><li>2</li></ul>
+    <ul>
+        <li>2</li>
+    </ul>
 </body>
+
 </html>

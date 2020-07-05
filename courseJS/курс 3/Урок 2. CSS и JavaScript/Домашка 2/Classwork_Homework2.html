@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Classwork</title>
+    <style type="text/css">
+       
+    </style>
+</head>
+<body>
+    <div id="one">one</div>
+
+    <script>
+    var body = document.querySelector('body');
+
+
+    // Добавьте после дива с id=one еще один див с текстом two и id=two
+    var div = document.getElementById('one');
+    var cloneDiv = div.cloneNode(true);
+    cloneDiv.id = 'two';
+    cloneDiv.innerText = 'two';
+    cloneDiv.style.cssText = 'height: 20px; width: 40px; background: red'
+    div.after(cloneDiv);
+ 
+
+
+
+    // На клик по id=two добавьте перед ним див с id - two_first, а див с id=two измените на two_second 
+    
+    function func() {
+
+        cloneDiv.style.background = 'green';
+
+        var newDiv = document.createElement('div');
+        newDiv.id = 'two_first';
+        newDiv.innerText = 'two_first';
+        body.insertBefore(newDiv, cloneDiv);
+
+        cloneDiv.id = 'two_second'; 
+    }
+
+    cloneDiv.addEventListener('click', func);
+
+
+
+    </script>
+</body>
+</html>

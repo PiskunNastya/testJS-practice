@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+    <style>
+        ul li {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="mystery">
+        <span>Загадочный предметы</span>
+        <ul>
+            <li class="animal cat with-fur">кот</li>
+            <li class="vegetable">сельдерей</li>
+            <li class="mineral">серебро</li>
+        </ul>
+    </div>
+
+    <input onclick="oneFunc(this.id)" id="cat" type="button" value="Animal">
+    <input onclick="oneFunc(this.id)" id="vegetable" type="button" value="Vegetable">
+    <input onclick="oneFunc(this.id)" id="mineral" type="button" value="Mineral">
+
+    <div id="inOut"></div> 
+    <p>ololo</p>
+
+    <script>
+        var inOut = document.getElementById('inOut');
+
+        // function getAnimal() {
+        //     inOut.innerHTML = document.getElementById('mystery').querySelector('li.animal').innerHTML;
+        // }
+        // function getVegetable() {
+        //     inOut.innerHTML = document.getElementById('mystery').querySelector('li.vegetable').innerHTML;
+        // }
+        // function getMineral() {
+        //     inOut.innerHTML = document.getElementById('mystery').querySelector('li.mineral').innerHTML;
+        // }
+
+        function oneFunc(idContent) {
+            // console.log(idContent);
+            // inOut.innerText = document.getElementById('mystery').querySelector('idContent').innerText;
+            // inOut.innerText = document.querySelector('.' + 'idContent').innerText;
+            inOut.innerText = document.querySelector(`.${idContent}`).innerText; 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+    <style>
+        ul li {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="mystery">
+        <span>Загадочный предметы</span>
+        <ul>
+            <li class="animal cat with-fur">кот</li>
+            <li class="vegetable">сельдерей</li>
+            <li class="mineral">серебро</li>
+        </ul>
+    </div>
+
+    <input onclick="get(this.value.toLowerCase())" type="button" value="Animal">
+    <input onclick="get(this.value.toLowerCase())" type="button" value="Vegetable">
+    <input onclick="get(this.value.toLowerCase())" type="button" value="Mineral">
+
+    <div id="inOut"></div> 
+
+    <script>
+        var inOut = document.getElementById('inOut');
+
+        function get(selector) {
+            inOut.innerText = document.querySelector(`.${selector}`).innerHTML;
+
+            var obj = document.querySelector(`.${selector}`);   // сохраняю тег <li> в переменную
+            console.dir(obj);                                   // и смотрю какие у него есть свойства
+        }
+    </script>
+</body>
+</html>

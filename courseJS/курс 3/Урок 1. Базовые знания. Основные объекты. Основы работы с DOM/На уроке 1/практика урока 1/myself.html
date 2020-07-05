@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="myText">Список покупок</label>
+        <input type="text" id='inputText'>
+        <input type="button" value="кнопка_input" id="button" onclick="click_InputButton()">
+        <button type="submit">кнопка_button</button>
+    </form>
+
+    <script>
+        var form = document.querySelector('form');
+        // var inputText = document.getElementById('inputText'); // ненужно
+        document.getElementById('inputText').value = ''
+        var button = document.querySelector('button');
+
+
+        var newElem_ul = document.createElement('ul');
+        // newElem_Div.setAttribute('id', 'myList');
+        // newElem_ul.id = 'myList';
+        // document.body.insertBefore(newElem_Div, form);
+        document.body.appendChild(newElem_ul);
+
+
+        var valueInput = ''; // глобальная переменная в которую динамически записуеться значения инпута
+
+        function eventBrowser(event) {
+            event.preventDefault(); // предотвращяет дефолтное событие браузера перезагружаться при отправки формы
+        }
+
+
+        function eventInput(event) {
+            valueInput = event.target.value; // перезаписываем глобальную переменную
+            console.log(valueInput);
+        }
+
+
+        // две кнопки делают одно и тоже, я просто тестила разные варианты
+        function click_InputButton(event) {
+            var inputText = document.getElementById('inputText').value = ''; // перезаписываем само значение инпут
+            if (valueInput) {
+                var newElem_li = document.createElement('li');
+                newElem_li.innerText = valueInput;
+                newElem_ul.appendChild(newElem_li);
+                valueInput = '';
+            }
+        }
+
+
+        function eventButton() {
+            var inputText = document.getElementById('inputText');
+            inputText.value = '';                                             // перезаписываем само значение инпут
+            if (valueInput) {
+                var newElem_li = document.createElement('li');
+                newElem_li.innerText = valueInput;
+                newElem_ul.appendChild(newElem_li);
+                // valueInput = '';
+            }
+
+        }
+
+
+
+
+
+        form.addEventListener('submit', eventBrowser);  // прослушка шпион на форму
+        inputText.addEventListener('input', eventInput); // прослушка шпион на инпут
+        button.addEventListener('click', eventButton); // прослушка шпион на кнопку button
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 100px;
+            height: 50px;
+            background: darkorange;
+        }
+
+        section {
+            width: 200px;
+            height: 200px;
+            background: darkseagreen;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div>
+        <p>Lorem ipsum dolor sit.</p>
+    </div> -->
+
+    <section style="background: darkslategrey;">
+        <p>Lorem ipsum dolor sit.</p>
+    </section>
+
+
+    <script>
+        var sectionTag = document.querySelector('section');
+        console.log(sectionTag);
+        console.log(sectionTag.style);
+        console.log(sectionTag.style.cssText);
+        console.log(sectionTag.style.background);
+    </script>
+
+</body>
+</html>

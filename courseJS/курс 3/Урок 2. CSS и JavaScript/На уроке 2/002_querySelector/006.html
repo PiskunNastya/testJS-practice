@@ -1,0 +1,51 @@
+<!-- Свойство className соответствует HTML-атрибуту class. -->
+<!-- contains - метод подойдёт везде, где не надо определять, какой элемент выше или ниже по DOM, а нужно просто проверить, внутри или нет.
+    var result = nodeA.contains(nodeB)
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>classList</title>
+    <style>
+        .myclass {
+            font-style: normal;
+            color: green;
+        }
+    </style>
+</head>
+
+<body class="class1 class2">
+    <div class="foo bar visible" id="mydiv">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius tempora repellat tenetur iste vitae libero earum
+        corrupti, laborum reiciendis obcaecati odit illum facere, aliquam sequi velit. Magnam at fugit impedit?
+    </div>
+
+    <script>
+        // console.log(document.body.className);
+
+        document.body.className += ' class3';
+
+        // console.log(document.body.className);
+
+        var myDiv = document.getElementById("mydiv");
+        // console.log(myDiv.classList);
+
+        // было foo bar visible
+        myDiv.classList.remove("foo"); // стало bar visible
+        myDiv.classList.add("myclass"); // стало bar visible myclass
+        // Если класс есть - убрать, если нет - добавить
+        myDiv.classList.toggle("visible"); // стало bar myclass
+        console.log(myDiv.classList);
+        console.log(myDiv.className);
+
+        if (myDiv.classList.contains("visible")) {
+            alert(true);
+        } else {
+            alert('nope')
+        };
+    </script>
+</body>
+
+</html>

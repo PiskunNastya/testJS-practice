@@ -1,0 +1,35 @@
+#modal {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.8);
+    transform: translateY(1000px);
+    transition: transform linear 300ms;
+    top: 0;
+    left: 0;
+}
+
+.modal__visible {
+    transform: translateY(0px) !important;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    top: 50%;
+    margin-top: -100px;
+    padding: 20px;
+}
+
+textarea {
+    margin: 20px auto;
+    height: 120px;
+    resize: none;
+}

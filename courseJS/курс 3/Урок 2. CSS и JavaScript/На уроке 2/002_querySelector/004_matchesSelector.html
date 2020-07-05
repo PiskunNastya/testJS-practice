@@ -1,0 +1,41 @@
+<!-- Вызов elem.matches(css) проверяет, удовлетворяет ли elem селектору css. Он возвращает true либо false.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>matchesSelector</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <p class="ololo" id="foo">This is the element!</p>
+
+  <script type="text/javascript">
+    var el = document.querySelector("#foo");
+    // if (el.matches("div")) {
+    //   alert("Match!");
+    // } else {alert('Doesn\'t match')}
+
+    // if (el.matches("p")) {
+    //   alert("Match!");
+    // } else {
+    //   alert('Doesn\'t match')
+    // }
+
+    // if (el.matches("#foo")) {
+    //   alert("Match!");
+    // } else {
+    //   alert('Doesn\'t match')
+    // }
+
+    if (el.matches(".ololo")) {
+      alert("Match!");
+    } else {
+      alert('Doesn\'t match')
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!-- window.getComputedStyle -  используется для того, чтобы получить текущее используемое значение свойства -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>getComputedStyle&currentStyle</title>
+    <style>
+      body { 
+        margin: 10em;
+        color: rgb(90, 139, 44);
+        background-color: rgb(152, 235, 104);
+        text-decoration: underline;
+        font-size: 16px;
+      }
+  </style>
+</head>
+<body>
+    <p>ololo</p>
+<script> 
+    var computedStyle = getComputedStyle(document.body);
+    console.log(computedStyle);
+    // console.log(computedStyle.marginTop);
+    // console.log(computedStyle.backgroundColor);
+    // console.log(document.body.style);
+
+
+    console.dir(computedStyle);
+</script>
+</body>
+</html>

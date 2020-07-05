@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+        div {
+            width: 150px;
+            height: 150px;
+            margin: 15px;
+
+        }
+
+        #yellow {
+            background: yellow;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #pink {
+            background-color: pink;
+        }
+
+        body {
+            display: flex;
+        }
+
+        /* div {
+            visibility: hidden;
+        }
+
+        div {
+            display: none;
+        } */
+
+    </style>
+
+
+</head>
+<body>
+    <div id="yellow"></div>
+    <div id="red"></div>
+    <div id="blue"></div>
+    <div id="pink"></div>
+    <button type="button">Кнопка</button>
+
+    <script>
+        var yellow_visibilityHidden = document.getElementById('yellow');
+        console.log(yellow_visibilityHidden);
+        var red_green = document.getElementById('red');
+        console.log(red_green);
+        var blue_displayNone = document.getElementById('blue');
+        console.log(blue_displayNone);
+        var button = document.querySelector('[type=button]');
+        console.log(button);
+
+        function btnWork() {
+            yellow_visibilityHidden.style.visibility = 'hidden';
+            blue_displayNone.style.display = 'none';
+            // red_green.style.background = 'green';
+        }
+
+        button.addEventListener('click', btnWork);
+    </script>
+
+
+</body>
+</html>

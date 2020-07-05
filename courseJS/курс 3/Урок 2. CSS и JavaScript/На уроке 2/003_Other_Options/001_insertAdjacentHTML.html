@@ -1,0 +1,21 @@
+<!-- insertAdjacentHTML позволяет вставлять произвольный HTML в любое место документа, в том числе и между узлами! -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>insertAdjacentHTML</title>
+</head>
+<body>
+    <ul id="myUL">
+        <li>1</li>
+        <li>2</li>
+        <!-- не хватает 3 4 -->
+        <li>5</li>
+    </ul>
+    <script>
+        var ul = document.getElementById("myUL");
+        var li5 = ul.children[2]; // альтернатива из DOM4 не работает в ИЕ10-
+        li5.insertAdjacentHTML("beforeBegin", "<li>3</li><li>4</li>");
+    </script>
+</body>
+</html>

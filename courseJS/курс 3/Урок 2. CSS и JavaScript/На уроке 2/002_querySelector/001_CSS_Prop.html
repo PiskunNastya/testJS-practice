@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS свойства</title>
+    <style>
+        div {
+            width: 200px; 
+            height: 200px; 
+            background-color: Red;
+        }
+    </style>
+</head>
+<body>
+    <div style="font-family: Ubuntu">
+    TEXT
+    </div>
+    <input type="button" value="Сменить цвет" />
+    <script>
+        var button = document.getElementsByTagName("input")[0];
+        var color = '#005648';
+
+        button.onclick = function () {
+            var div = document.getElementsByTagName("div")[0];
+            div.style.backgroundColor = color;
+            div.style.fontSize = "20px";
+             // в JavaScript все CSS свойства, что содержат знак "-" в их имени заменены на свойства в camelCase 
+            // font-size => fontSize
+
+            alert(div.style.backgroundColor);
+        };
+    </script>
+</body>
+</html>
