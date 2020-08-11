@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>Prototype</title>
+<body>
+    <script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+            this.nationalityChecker = function () {
+                document.write("My father nationality is " + this.nationality + "<br />"); 
+            };
+        };
+        
+        Person.prototype.nationality = "Ukrainian";
+
+        var myFather = new Person("Ivan", "Ivanov", 50, "blue");
+
+        myFather.nationalityChecker();
+
+        var myMother = new Person("Irina", "Ivanova", 51, "green");
+        
+        myMother.nationalityChecker();
+    
+        var mySister = new Person("Irina", "Ivanova", 15, "green");
+        console.log(myFather, myMother, mySister);
+
+    
+        //нам не нужен метод myMother.nationalityChecker(), а он есть
+
+    </script>
+
+</body>
+</html>

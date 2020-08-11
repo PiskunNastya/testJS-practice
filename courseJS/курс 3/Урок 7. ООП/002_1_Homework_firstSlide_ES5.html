@@ -1,0 +1,55 @@
+<!-- Реализуйте последние 2 слайда в презентации с помощью пройденого на уроке материала -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+<body>
+
+
+    <script>
+        function Man(walk, eat, drink) {
+            this.walk = walk;
+            this.eat = eat;
+            this.drink = drink;
+        }
+
+        function Soldier(walk, eat, drink) {
+            this.walk = 'walk';
+            this.eat = eat;
+            this.drink = drink;
+            this.shoot = function() {
+                console.log('Yes, hi shoots');
+            }
+        }
+
+        function Doctor(walk, eat, drink) {
+            this.walk = walk;
+            this.eat = eat;
+            this.drink = drink;
+            this.cure = function() {
+                console.log('Yes, hi heals');
+            }
+        }
+
+        var man = new Man('yes', 'chicken', 'beer');
+
+
+        Soldier.prototype = new Man();
+        Doctor.prototype = new Man();
+    
+
+        var soldier = new Soldier('not', 'porridge', 'compote');
+        var doctor = new Doctor('not', 'chicken', 'water');
+
+
+        soldier.shoot();
+        doctor.cure();
+
+        console.log(soldier);
+
+
+    </script>
+</body>
+</html>

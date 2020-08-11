@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>События клавиатуры</title>
+    <script>
+        window.onload = function () {
+            // Событие onkeypress используется для обработки клавиш с печатными символами.
+            document.getElementById("main").onkeypress = function (e) {
+                clear();
+                print("alt = " + e.altKey);
+                print("ctrl = " + e.ctrlKey); // ctrl + слеш
+                print("shift = " + e.shiftKey); // shift + a
+                print("charCode = " + String.fromCharCode(e.charCode)); 
+                // код символа (передается при событии keypress) не работает для onkeydown
+                print("keyCode = " + e.keyCode); // код клавиши
+
+                console.log(e);
+            }
+
+            function print(message) {
+                document.getElementById("output").innerHTML += message + "<br />";
+            };
+
+            function clear() {
+                document.getElementById("output").innerHTML = "";
+            };
+        };
+    </script>
+</head>
+<body id="main">
+    <p id="output"></p>
+</body>
+</html>

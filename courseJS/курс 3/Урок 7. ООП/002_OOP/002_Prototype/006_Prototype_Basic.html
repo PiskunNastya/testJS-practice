@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Метод toString</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function Person(age, salary) {
+            this.age = age;
+            this.salary = salary;
+        }
+
+        // переопределение метода toString из Object
+        Person.prototype.toString = function () {
+            return "Возраст:" + this.age + " Зарплата:" + this.salary;
+        };
+
+        var firstHuman = new Person(32, 400);
+        var secondHuman = new Person(16, 200);
+
+        document.write(firstHuman + "<br />"); 
+        document.write(secondHuman + "<br />");
+        console.log(firstHuman)
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

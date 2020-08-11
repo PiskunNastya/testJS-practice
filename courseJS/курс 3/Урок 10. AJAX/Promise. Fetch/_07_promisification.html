@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promisification</title>
+
+<!--    Промисификация – это когда берут асинхронную функциональность и делают для неё обёртку, возвращающую промис.-->
+<!--    После промисификации использование функциональности зачастую становится гораздо удобнее.-->
+<!--    В качестве примера сделаем такую обёртку для запросов при помощи XMLHttpRequest.-->
+
+<!--    Функция httpGet(url) будет возвращать промис, который при успешной загрузке данных с url будет переходить в fulfilled с этими данными, а при ошибке – в rejected с информацией об ошибке:-->
+    <script>
+        function httpGet(url) {
+            return new Promise(function(resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', url, true);
+                xhr.onload = function() {
+                    if (this.status == 200) {
+                        resolve(this.response);
+                    } else {
+                        var error = new Error(this.statusText);
+                        error.code = this.status;
+                        reject(error);
+                    }
+                };
+                xhr.onerror = function() {
+                    reject(new Error("Network Error"));
+                };
+                xhr.send();
+            });
+        }
+
+        httpGet("http://jsonplaceholder.typicode.com/posts/1")
+            .then(
+                response => alert(`Fulfilled: ${response}`),
+                error => alert(`Rejected: ${error}`)
+            );
+    </script>
+</head>
+<body>
+
+</body>
+</html>

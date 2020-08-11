@@ -1,0 +1,23 @@
+<!-- split() - разбивает строку на массив подстрок в соответствии с регулярным выражением. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RexExp</title>
+</head>
+<body>
+
+<p id="demo">02as-25d-2010</p>
+
+<button onclick="myFunction()">Пробовать</button>
+
+<script>
+function myFunction() {
+    var date = document.querySelector('#demo').innerHTML;
+    var dateArray = date.split(/\D{1,}/);
+	console.log(dateArray);
+};
+
+</script>
+</body>
+</html>

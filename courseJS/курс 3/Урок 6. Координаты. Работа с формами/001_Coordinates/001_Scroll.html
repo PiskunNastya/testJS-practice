@@ -1,0 +1,34 @@
+<!-- Значение текущей прокрутки страницы хранится в свойствах window.pageYOffset -->
+<!-- readonly -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, nobis expedita dicta harum exercitationem animi et soluta repudiandae perferendis esse veritatis temporibus perspiciatis nemo, porro sapiente facere numquam, adipisci fuga!</p>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est similique doloribus perferendis, voluptas magni laboriosam temporibus assumenda dolor quisquam reprehenderit. Reiciendis fugiat harum, deleniti sint quos voluptatum esse, quaerat quidem.</p>
+    <button onclick="clickHandler()">scrollStatus</button>
+    <script>
+    function clickHandler () {
+        var scrollStatus = window.pageYOffset || document.documentElement.scrollTop; //IE9-
+
+        console.log("Текущая прокрутка: " + scrollStatus);
+    };
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html charset="UTF-8">
+<head>
+    <title>Обработчик события как атрибут</title>
+    <script type="text/javascript">
+        function validation() {
+            alert("validation");
+        }
+    </script>
+    <meta charset='utf-8'/>
+</head>
+<body>
+    <input type="button" name="button1" value="Click me" onclick="alert('Hello World!')" />
+    <input type="button" name="button1" value="Click me" onclick="var i = 0; if (i > 5); console.log(i);" />
+        <form>
+            <input type="text" name="firstName" />
+            <br />
+            <input type="reset" onclick="return confirm('Вы уверены?')" />
+            <input type="submit" onclick="validation()" />
+        </form>
+</body>
+</html>

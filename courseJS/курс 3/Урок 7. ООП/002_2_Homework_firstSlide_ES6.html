@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        class Man {
+            constructor() {
+
+            }
+            walk() {
+                console.log('Man walk');
+            }
+            eat() {
+                console.log('Man eat');
+            }
+            drink() {
+                console.log('Man drink'); 
+            }
+        }
+
+        class Soldier extends Man {
+            constructor() {
+                super();
+            }
+            shoot() {
+                console.log('Soldier shoot'); 
+            }
+        }
+
+        class Doctor extends Man {
+            constructor(ololo) {
+                super();
+                this.ololo = ololo;
+            }
+            cure() {
+                console.log('Doctor cure');
+            }
+        }
+
+
+        var soldier = new Soldier();
+        var doctor = new Doctor('ha');
+
+        console.log(soldier);
+        console.log(doctor);
+
+    </script>
+</body>
+</html>

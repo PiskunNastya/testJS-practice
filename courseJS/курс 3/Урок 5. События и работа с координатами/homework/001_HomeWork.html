@@ -1,0 +1,62 @@
+<!--
+Создайте ссылку и див с текстом внутри, который изначально при загрузке страницы будет скрыт.
+При клике на ссылку див появляется, если повторно нажать ссылку див и текст должны пропасть.
+Также создайте кнопку, которая будет отменять выполнение обработчика клика по ссылке.
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+
+    <style>
+        .display {
+            width: 350px;
+            height: 150px;
+            background: #1c2936;
+            color: cornsilk;
+        }
+
+        .NOTdisplay {
+            display: none;
+        }
+
+
+    </style>
+
+ </head>
+ <body>
+
+    <a href="#">My link</a>
+
+    <div class="NOTdisplay">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis alias magnam ratione quia possimus ipsam.</p>
+    </div>
+
+    <button type="button">Cancel execution of an event handler</button>
+
+    <script>
+        var link = document.querySelector('[href="#"]');
+        var button = document.querySelector('[type="button"]');
+        
+        
+        function workLink() {
+            var div = document.querySelector('div');
+            div.classList.toggle('display');
+            div.classList.toggle('NOTdisplay');
+            console.log(div);
+        }
+
+
+
+        link.addEventListener('click', workLink);
+        button.addEventListener('click', function() {
+            link.removeEventListener('click', workLink);
+        });
+
+    </script>
+     
+ </body>
+ </html>

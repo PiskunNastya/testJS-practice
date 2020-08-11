@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function Doctor() {
+            this.walk = function() {
+                console.log('Doctor walk');
+            }
+            this.eat = function() {
+                console.log('Doctor eat');
+            }
+            this.drink = function() {
+                console.log('Doctor drink');
+            }
+            this.cure = function() {
+                console.log('Doctor cure');
+            }
+        }
+
+        function Dentist() {
+            this.cure = function() {
+                console.log('Treat teeth');
+            }
+        }
+
+        function Surgeon() {
+            this.cure = function() {
+                console.log('Perform operation');
+            }
+        }
+
+        Dentist.prototype = new Doctor();
+        Surgeon.prototype = new Doctor();
+
+        var dentist = new Dentist();
+        var surgeon = new Surgeon();
+
+        console.log(dentist);
+        console.log(surgeon);
+
+        dentist.cure();
+        surgeon.cure();
+
+
+    </script>
+    
+</body>
+</html>

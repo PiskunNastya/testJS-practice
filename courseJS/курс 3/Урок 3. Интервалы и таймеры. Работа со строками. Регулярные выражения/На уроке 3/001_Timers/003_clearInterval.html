@@ -1,0 +1,26 @@
+<!-- clearInterval - Отменяет выполнение кода setInterval -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>All, Elements</title>
+</head>
+<body>
+
+
+    <script>
+        var myVar;
+
+        function myFunction() {
+            myVar = setInterval(function(){console.log('interval')}, 1000);
+        }
+
+        function myStopFunction() {
+            clearInterval(myVar);
+            console.log('stop interval');
+        }
+    </script>
+    <button onclick="myFunction()">setInterval</button>
+    <button onclick="myStopFunction()">clearInterval</button>
+</body>
+</html>

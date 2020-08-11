@@ -13,6 +13,9 @@
             var demo = document.getElementById("demo");
             demo.innerHTML = document.body.firstChild.nodeName;
             console.log(document.body.lastChild.nodeName);
+
+            var newEl = document.createElement('div');
+            console.log(newEl.nodeName);
             // при помощи tagName мы можем работать только с элементами, 
             // а nodeName может что-то сказать и о других типах узлов.
         }

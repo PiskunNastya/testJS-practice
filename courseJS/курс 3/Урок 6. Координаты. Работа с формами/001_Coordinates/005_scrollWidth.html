@@ -1,0 +1,42 @@
+<!-- Ширина и высота контента с учетом прокручиваемой области. -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <style>
+        #container {
+            width: 350px;
+            height: 150px;
+            margin: 10px;
+            border: 10px solid red;
+            padding: 10px;
+        }
+        .inner {
+            width: 1000px;
+            height: 1000px;
+        }
+    </style>
+    <script type="text/javascript">
+        function getContainerSize () {
+            var container = document.getElementById("container");
+            var message = "Ширина с прокруткой: " + container.scrollWidth + "px.\n";
+            message += "Высота с прокруткой: " + container.scrollHeight + "px.\n";
+            alert(message);
+            console.log(container.clientHeight +"  / " + container.clientWidth - 'with padding')
+            console.log(container.clientHeight + 'px clientHeight');
+            console.log(container.clientWidth + 'px clientWidth');
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div class="inner">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, corporis!<br />
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, corporis!<br />
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, corporis!<br />
+            margin: 10px; border: 2px solid red; padding: 0px;
+        </div>
+    </div>
+    <button onclick="getContainerSize();">получить размер контейнера</button>
+</body>
+</html>

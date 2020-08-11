@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Prototype</title>
+</head>
+<body>
+    <script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        console.log(Person);
+
+        Person.prototype.nationality = "Ukrainian";
+
+        console.log(Person);
+
+        
+    </script>
+
+</body>
+</html>

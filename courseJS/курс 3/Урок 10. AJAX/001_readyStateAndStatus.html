@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <meta charset='utf-8'>
+    <title>readyState status</title>
+    <!--         
+        readyState - свойство, которое возвращает статус загрузки текущего документа.
+
+        Возвращаеммые значения:
+
+        uninitialized(1) - Загрузка еще не началась;
+        loading(2) - В процессе загрузки;
+        interactive(3) - Загружен, но не на 100%;
+        complete(4) - Полностью загружен;
+
+        status  200: "OK"
+                404: Page not found
+    -->
+<body>
+    Статус загрузки:
+    <script>
+        console.log(document.readyState);
+    </script>
+</body>
+</html>

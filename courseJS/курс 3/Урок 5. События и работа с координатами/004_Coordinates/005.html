@@ -1,0 +1,43 @@
+<!-- Свойства clientWidth/Height для элемента позволяют получить ширину/высоту видимой элемента (ширина/высота + padding + border). -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Client Height/Width olololoolo</title>
+    <style>
+        .adholder__item--adsense {
+            height: 35px;
+            border: 20px solid red;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var allAds = document.querySelectorAll(".adholder__item, .adholder__item--adsense");
+            var i;
+            var l = allAds.length;
+
+            for (i = 0; i < l; i++) {
+                if (allAds[i].clientHeight > 30) { // !! удобнее чем обращение через стили (getComputedStyle или .style)
+                    allAds[i].style.display = "none";
+                };
+                console.log(allAds[i].clientHeight);
+                console.log(allAds[i].clientWidth);
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <div class="adholder__item">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus ab ipsam quod corporis animi ipsum quos
+        veritatis nemo sapiente harum, eligendi, consequuntur, illo sint perferendis voluptatibus aliquid! Repudiandae,
+        perspiciatis nihil!
+    </div>
+    <div class="adholder__item--adsense">
+        <img src="23" alt="">
+    </div>
+</body>
+
+</html>

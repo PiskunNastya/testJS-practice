@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: crimson;
+        position: absolute;
+        top: 50px;
+        left: 150px;
+    }
+</style>
+
+<body>
+
+    <div id="mydiv"></div>
+
+    <script>
+        var mydiv = document.getElementById(("mydiv"));
+        dragElement(mydiv);
+
+        function dragElement(elmnt) {
+
+            elmnt.onmousedown = function (e) {
+                var clickCoordinaresSquared_X = e.offsetX;
+                var clickCoordinaresSquared_Y = e.offsetY;
+
+                var objRect = elmnt.getBoundingClientRect();
+                var directionX = objRect.x;
+                var directionY = objRect.y;
+
+                var resX = 
+               
+
+                document.onmouseup = function () {
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                }
+
+                document.onmousemove = function (e) {
+
+            
+                    var moveMouseX = e.clientX;
+                    var moveMouseY = e.clientY;
+
+
+                    elmnt.style.top = moveMouseY - clickCoordinaresSquared_Y + 'px';
+                    elmnt.style.left = moveMouseX - clickCoordinaresSquared_X + 'px';
+
+                };
+
+            }
+
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>

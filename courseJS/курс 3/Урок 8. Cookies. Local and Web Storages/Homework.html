@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #enter {
+            width: 450px;
+            height: 250px;
+            background-color: cornflowerblue;
+            border: 1px solid rgb(1, 1, 2);
+            border-radius: 3px;
+        }
+
+        #modalWindow {
+            width: 450px;
+            height: 250px;
+            background-color: rgb(100, 237, 111);
+            border: 1px solid rgb(1, 1, 5);
+            border-radius: 3px;
+        }
+
+        .block {
+            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .none {
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Создайте страницу которая запрашивает имя пользователя, если пользователь вводит "Admin" либо "admin" 
+        он попадает на страницу, которая оповещает его о том что " Пользоваетль Admin(не статическая строка, 
+        а данные что ввел пользователь) вошел в систему" а рядом разместите кнопку "Выход" которая вернет пользователя 
+        к модальному окну ввода логина. Реализуйте код как для куки так и для localstorage. -->
+
+
+        <div id="enter" class="block">
+            <form>
+                <input type="text" placeholder="Your name" name="enter">
+                <input type="button" name="enter" value="Выход">
+                <p id='invalidLogin'></p>
+            </form>
+        </div>
+
+        <div id="modalWindow" class="none">
+            <p id="greeting"></p>
+            <button>Виход</button>
+        </div>
+
+        <script>
+            var div_enter = document.getElementById('enter');                           // нашли первый див-регистрация
+            var div_modalWindow = document.getElementById('modalWindow');               // нашли второй див-вы-в-системе
+            var greeting = document.querySelector('#greeting');                         // приветствие в див-вы-в-системе
+            var invalidLogin = document.getElementById('invalidLogin');                 // предупреждение ошибки в див-регистрация
+            var button_enter = document.querySelector('[type="button"]');
+            var button_modalWindow = document.querySelector('button');
+            var inputValue;
+
+            button_enter.addEventListener('click', function() {
+                inputValue = document.querySelector('[type="text"]').value;
+
+                var regExp = /[Aa]dmin/
+                var validation = regExp.test(inputValue);
+
+                if(validation) {
+                    div_enter.classList.remove('block');
+                    div_enter.classList.add('none');
+                    div_modalWindow.classList.add('block');
+                    div_modalWindow.classList.remove('none');
+                    greeting.innerText = `Пользователь ${inputValue} вошел в систему`;
+                    document.querySelector('[type="text"]').value = '';
+                    document.cookie = `user=${inputValue}`;
+                    window.localStorage.user = inputValue;
+                } else {
+                    invalidLogin.innerText = 'Неверное имя!'
+                }
+            });
+
+            button_modalWindow.addEventListener('click', () => {
+                div_modalWindow.classList.remove('block');
+                div_modalWindow.classList.add('none');
+                div_enter.classList.remove('none');
+                div_enter.classList.add('block');
+                document.cookie = `user=${inputValue}; max-age=0`;
+                window.localStorage.removeItem('user');
+            });
+
+
+        </script>
+
+</body>
+
+</html>

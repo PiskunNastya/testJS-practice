@@ -1,0 +1,36 @@
+<!-- Метод exec возвращает массив и ставит свойства регулярного выражения. 
+    Всегда возвращает только одно значение или null.
+При глобальном поиске (флаг g) метод возвращает найденную подстроку и продолжает поиск далее по строке.
+Если совпадений нет, то возвращается null. -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>RexExp</title>
+</head>
+<body>
+
+<button onclick="myFunction()">Пробовать</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var str = "Lorem! Lorem ipsum dolor Lorem";
+
+    //var patt = new RegExp("Lorem", "g");
+
+    var patt = /Lorem/g;
+
+    var result = patt.exec(str);
+    document.getElementById("demo").innerHTML = result;
+
+    var resultAll;
+    while ((resultAll = patt.exec(str)) != null) {
+        console.log("Найдено " + resultAll + " в позиции " + resultAll.index + ". Следующий поиск начнется с индекса " + patt.lastIndex);
+    };
+ };
+</script>
+
+</body>
+</html>

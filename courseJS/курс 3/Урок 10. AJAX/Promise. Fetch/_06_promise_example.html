@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        // Создаётся объект promise
+        let promise = new Promise((resolve, reject) => {
+        
+            setTimeout(() => {
+                // переведёт промис в состояние fulfilled с результатом "result"
+                resolve("result!");
+            }, 1000);
+        
+        });
+        
+        // promise.then навешивает обработчики на успешный результат или ошибку
+        promise
+            .then(
+                function(result) {
+                    // первая функция-обработчик - запустится при вызове resolve
+                    alert("Fulfilled: " + result); // result - аргумент resolve
+                },
+                error => {
+                    // вторая функция - запустится при вызове reject
+                    alert("Rejected: " + error); // error - аргумент reject
+                }
+            );
+
+//**********************************************************************************************************//            
+
+        let promise1 = new Promise(function(resolve, reject) {
+            //setTimeout(() => resolve("done!"), 1000);
+            setTimeout(() => reject("not done!"), 1000);
+        });
+
+        // promise1.then(
+        //     result => alert(result), // выведет "done!" через одну секунду
+        //     error => alert(error) // не будет запущена
+        // );
+        promise1.then(
+            result => alert(result), // не будет запущена
+            error => alert(error) // выведет "Error: Whoops!" спустя одну секунду
+        );
+    </script>
+</body>
+</html>

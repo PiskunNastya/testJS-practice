@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>События мыши</title>
+    <style>
+        div {
+            background-color:red;
+            width:150px;
+            height:150px;
+            float: left;
+        }
+        #demo {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="left"></div>
+    <div id="demo"></div>
+    <div id="right"></div>
+    <script>
+        var divDemo = document.getElementById("demo");
+        // мышь вошла в пределы элемента.
+        divDemo.onmouseover = function (e) {
+            this.style.backgroundColor = "green";
+            this.innerHTML = "onmouseover";
+            if (!e.relatedTarget) {
+                e.relatedTarget = e.fromElement; // Элемент, с которого курсор пришел
+
+            }
+            // console.log(e.relatedTarget);
+        };
+
+        divDemo.onmousemove = function (e) {
+            setTimeout (function () {
+                divDemo.style.backgroundColor = "blue";
+                divDemo.innerHTML = "onmousemove";
+            }, 2000);
+        };
+
+        // мышь вышла за пределы элемента.
+        divDemo.onmouseout = function (e) {
+            this.style.backgroundColor = "yellow";
+            this.innerHTML = "onmouseout";
+            if (!e.relatedTarget) {
+                e.relatedTarget = e.toElement; // Элемент, к которому курсор пришел 
+            }
+            console.log(e.relatedTarget);
+            console.log(e);
+        };
+    </script>
+</body>
+</html>

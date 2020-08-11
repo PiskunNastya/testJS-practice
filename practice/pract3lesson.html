@@ -14,9 +14,27 @@
     </style>
 </head>
 <body>
-    <div>
+    <div id="id_div">
         <p>Lorem ipsum dolor sit.</p>
     </div>
+
+    <script>
+
+
+    console.log(id_div);
+
+    
+    id_div.onclick = func;
+
+    function func() {
+        console.log('обработчик события onclick');
+    }
+
+    id_div.addEventListener('dblclick', function() {
+        console.log('ololo')
+    });
+
+    </script>
 
 </body>
 </html>

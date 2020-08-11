@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Timeout As Interval</title>
+	<script type="text/javascript">
+		var count = 0;
+		
+		function myTimeoutFunction(){
+			console.log('timeout' + count++);
+			setTimeout(myTimeoutFunction, 1000);
+		}
+		myTimeoutFunction();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function Man() {                                         // создала самый главный класс
+            this.walk = function() {
+                console.log('Man walk');
+            }
+            this.eat = function() {
+                console.log('Man eat');
+            }
+            this.drink = function() {
+                console.log('Man drink');
+            }
+        }
+
+
+        function Soldier() {                                    // создала класс              
+            this.shoot = function() {
+                console.log('Soldier shoot');
+            }
+        }
+
+        function Doctor() {                                     // создала класс
+            this.cure = function() {
+                console.log('Doctor cure');
+            }
+        }
+
+        Soldier.prototype = new Man();                          // назначили наследование
+        Doctor.prototype = new Man();                           // назначили наследование
+
+        console.dir(Soldier);
+
+        var doctor = new Doctor();                              // создала экземпляр класса
+        var soldier = new Soldier();                            // создала экземпляр класса
+        console.log(doctor);
+        doctor.walk();
+        doctor.cure();
+        soldier.shoot();
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!-- При создании обещание находится в ожидании (pending), а затем может стать выполнено  (fulfilled),
+вернув полученный результат (значение), или отклонено (rejected), вернув причину отказа. В любом из этих случаев вызывается
+обработчик, прикрепленный к обещанию методом then(). Если в момент прикрепления обработчика обещание уже сдержано или нарушено,
+он все равно будет выполнен, т.е. между выполнением обещания и прикреплением обработчика нет «состояния гонки», как, например,
+в случае с событиями в DOM.
+
+Так как методы Promise.prototype.then и Promise.prototype.catch сами возвращают обещания, их можно вызывать цепочкой, создавая соединения. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Promise</title>
+</head>
+<body>
+	<img src="https://mdn.mozillademos.org/files/8633/promises.png">
+	<script type="text/javascript">
+		console.dir(Promise.prototype.then);
+		console.dir(Promise.prototype.catch);
+		console.dir(Promise.prototype)
+	</script>
+</body>
+</html>

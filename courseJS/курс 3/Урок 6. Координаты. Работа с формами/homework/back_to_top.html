@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        button {
+            margin-top: 1500px;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <button type="button">Back to top</button>
+
+    <script>
+        var button = document.querySelector('button');
+
+        button.addEventListener('click', function() {
+            window.scrollTo(0, 0);
+        });
+    </script>
+</body>
+</html>

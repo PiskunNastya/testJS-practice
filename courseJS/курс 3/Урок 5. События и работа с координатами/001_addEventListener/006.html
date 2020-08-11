@@ -1,0 +1,35 @@
+<!-- preventDefault - функция отменяющая действие по умолчанию для события -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>preventDefault</title>
+</head>
+
+<body>
+    <h1>ololo</h1>
+    <a id="parent" href="#">parent</a>
+    <div></div>
+    <script>
+        var anchor = document.querySelector('a');
+
+        function preventDefaultHandler(event) {
+
+            console.log(event); // инфо о событии
+            // console.log(event.target.previousElementSibling);
+            // console.log(event.target.nextElementSibling);
+            // console.log(event.target); // обьект <a id="parent" href="#">parent</a>
+            // console.log(event.target.tagName); // работаем с объектом, у него есть свойство - имя тега
+
+
+            // console.dir(event.target); // обьект <a id="parent" href="#">parent</a> кототый можно развернуть
+            
+            // event.preventDefault();
+        }
+
+        anchor.addEventListener('click', preventDefaultHandler);
+    </script>
+</body>
+
+</html>

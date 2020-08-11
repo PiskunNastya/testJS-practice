@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegete</title>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#">Ссылка 1</a></li>
+        <li><a href="#">Ссылка 2</a></li>
+        <li><a href="#">Ссылка 3</a></li>
+        <li><a href="#">Ссылка 4</a></li>
+        <li><a href="#">Ссылка 5</a></li>
+        <li><a href="#">Ссылка 6</a></li>
+
+    </ul>
+
+    <script>
+        var ul = document.querySelector('ul');
+
+        if (ul) {
+            ul.addEventListener('click', function (event) {
+
+                var target = event && event.target || window.event.srcElement;
+                console.log(window);
+                console.log(window.event)
+
+
+                if (target.tagName !== 'A') {
+                    return
+                }
+
+                console.log('ololo')
+
+
+            });
+        }
+    </script>
+
+
+
+</body>
+
+</html>

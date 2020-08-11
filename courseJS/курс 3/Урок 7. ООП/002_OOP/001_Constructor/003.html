@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Constructors</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        // Функция-конструктор для создания объекта Human.
+
+        function Human(name, surname) {
+            this.name = name;
+            this.surname = surname;
+            
+            this.showName = function () {
+                document.write("имя человека: " + this.name + " " + this.surname + "<br />");
+            }
+        }
+
+        console.log(Human.prototype)
+    </script>
+</body>
+</html>

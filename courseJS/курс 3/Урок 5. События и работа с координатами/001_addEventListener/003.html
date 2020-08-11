@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Установка обработчика addEventListener</title>
+</head>
+<body>
+
+    <button>First button</button>
+    <button>First button REMOVE</button>
+
+
+    <script>
+        var ollElem = document.getElementsByTagName('button');
+
+        ollElem[0].addEventListener('click', funk);
+
+
+        function funk() {
+            alert('First button');
+        }
+
+
+        ollElem[1].addEventListener('click', function() {
+            ollElem[0].removeEventListener('click', funk);
+        });
+
+
+
+    </script>
+
+</body>
+</html>

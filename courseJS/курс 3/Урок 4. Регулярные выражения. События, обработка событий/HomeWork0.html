@@ -1,0 +1,182 @@
+<!-- Напишите регулярные выражения, которые будут выбирать 
+    индекс - 55535 - 5 numbers
+    ip адресс, пример 255.255.255.255
+    цены в долларах - $0.84, $2.84, $4
+    дата в виде - 30/12/2016 - день, месяц, год
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        #index {
+            border: 1px solid rebeccapurple;
+            background: rgb(182, 160, 204);
+        }
+
+        #ip {
+            border: 1px solid rgb(51, 153, 131);
+            background: rgb(160, 204, 193);
+        }
+
+        #dollars {
+            border: 1px solid rgb(97, 153, 51);
+            background: rgb(181, 204, 160);
+        }
+
+        #date {
+            border: 1px solid rgb(153, 51, 73);
+            background: rgb(204, 160, 189);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="index">
+        <h2>Проверка индекса - 55535 - 5 numbers</h2>
+        <form>
+            <input type="text" id="textIndex">
+            <input type="button" value="Check index">
+        </form>
+        <p id="resultIndex">Результат регулярки:</p>
+    </div>
+
+    <div id="ip">
+        <h2>Проверка ip адресс, пример 255.255.255.255</h2>
+        <form>
+            <input type="text" id="textIp">
+            <input type="button" value="Check ip">
+        </form>
+        <p id="resultIp">Результат регулярки:</p>
+    </div>
+
+    <div id="dollars">
+        <h2>Проверка цены в долларах - $0.84, $2.84, $4</h2>
+        <form>
+            <input type="text" id="textDollars">
+            <input type="button" value="Check dollars">
+        </form>
+        <p id="resultDollars">Результат регулярки:</p>
+    </div>
+
+    <div id="date">
+        <h2>Проверка дата в виде - 30/12/2016 - день, месяц, год</h2>
+        <form>
+            <input type="text" id="textDate">
+            <input type="button" value="Check date">
+        </form>
+        <p id="resultDate">Результат регулярки:</p>
+    </div>
+
+
+
+    <script type="text/javascript">
+        var buttonIndex = document.querySelector('[value="Check index"]');          // добрались к кнопке
+        var buttonIp = document.querySelector('[value="Check ip"]');                // добрались к кнопке
+        var buttonDollars = document.querySelector('[value="Check dollars"]');      // добрались к кнопке
+        var buttonDate = document.querySelector('[value="Check date"]');            // добрались к кнопке
+
+
+        buttonIndex.addEventListener('click', function () {                         // назначили событие
+            var regIndex = /^\d{5}$/;
+            var text = document.querySelector('[id="textIndex"]').value;            // сохранили текст в переменную с инпута
+            document.querySelector('[id="textIndex"]').value = '';                  // oбнулили инпут
+            var displeyResult = document.querySelector('[id="resultIndex"]');       // добрались к элем где будем выводить результат
+            var resultIndex = regIndex.test(text);                                  // проверяем на сходство 
+            var displeyInfo;                                                        // флаг 
+
+            if (resultIndex) {                                                      // если результат будет true
+                displeyInfo = 'Ваш текст соответствует регулярному выражению';
+                displeyResult.style.background = 'green';
+            } else {                                                                // если результат будет false
+                displeyInfo = 'Ваш текст не соответствует регулярному выражению';
+                displeyResult.style.background = 'red';
+            }
+
+                                                                                    // выводим результат для пользователя
+            displeyResult.innerHTML = `Рузультат регулярки: <br>                    
+            Вы ввели текст - ${text} <br>
+            ${displeyInfo}`;
+        });
+
+
+
+        buttonIp.addEventListener('click', function () {                            // назначили событие
+            var regIp = /^\d{3}[.]\d{3}[.]\d{3}[.]\d{3}$/;
+            var text = document.querySelector('[id="textIp"]').value;               // сохранили текст в переменную с инпута
+            document.querySelector('[id="textIp"]').value = '';                     // oбнулили инпут
+            var displeyResult = document.querySelector('[id="resultIp"]');          // добрались к элем где будем выводить результат
+            var resultIp = regIp.test(text);                                        // проверяем на сходство 
+            var displeyInfo;                                                        // флаг 
+
+            if (resultIp) {                                                         // если результат будет true
+                displeyInfo = 'Ваш текст соответствует регулярному выражению';
+                displeyResult.style.background = 'green';
+            } else {                                                                // если результат будет false
+                displeyInfo = 'Ваш текст не соответствует регулярному выражению';
+                displeyResult.style.background = 'red';
+            }
+
+                                                                                    // выводим результат для пользователя
+            displeyResult.innerHTML = `Рузультат регулярки: <br>
+            Вы ввели текст - ${text} <br>
+            Результат метода test(): ${resultIp}`;
+        });
+
+
+
+        buttonDollars.addEventListener('click', function () {                       // назначили событие
+            // var regDollar = /^\$?[0-9]+(\.[0-9][0-9])?$/;
+            var regDollar = /^\$\d+(\.\d*)?$/;
+            var text = document.querySelector('[id="textDollars"]').value;          // сохранили текст в переменную с инпута
+            document.querySelector('[id="textDollars"]').value = '';                // oбнулили инпут
+            var displeyResult = document.querySelector('[id="resultDollars"]');     // добрались к элем где будем выводить результат
+            var resultDollars = regDollar.test(text);                               // проверяем на сходство 
+            var displeyInfo;                                                        // флаг 
+
+            if (resultDollars) {                                                    // если результат будет true
+                displeyInfo = 'Ваш текст соответствует регулярному выражению';
+                displeyResult.style.background = 'green';
+            } else {                                                                // если результат будет false
+                displeyInfo = 'Ваш текст не соответствует регулярному выражению';
+                displeyResult.style.background = 'red';
+            }
+
+                                                                                    // выводим результат для пользователя
+            displeyResult.innerHTML = `Рузультат регулярки: <br>
+            Вы ввели текст - ${text} <br>
+            Результат метода test(): ${resultDollars}`;
+        });
+
+
+
+        buttonDate.addEventListener('click', function () {                          // назначили событие
+            var regDate = /^\d{2}\/\d{2}\/\d{4}$/;
+            var text = document.querySelector('[id="textDate"]').value;             // сохранили текст в переменную с инпута
+            document.querySelector('[id="textDate"]').value = '';                   // oбнулили инпут
+            var displeyResult = document.querySelector('[id="resultDate"]');        // добрались к элем где будем выводить результат
+            var resultDate = regDate.test(text);                                    // проверяем на сходство 
+            var displeyInfo;                                                        // флаг 
+
+            if (resultDate) {                                                       // если результат будет true
+                displeyInfo = 'Ваш текст соответствует регулярному выражению';
+                displeyResult.style.background = 'green';
+            } else {                                                                // если результат будет false
+                displeyInfo = 'Ваш текст не соответствует регулярному выражению';
+                displeyResult.style.background = 'red';
+            }
+
+                                                                                        // выводим результат для пользователя
+            displeyResult.innerHTML = `Рузультат регулярки! <br>
+            Вы ввели текст - ${text} <br>
+            Результат метода test(): ${resultDate}`;
+        });
+
+    </script>
+</body>
+
+</html>

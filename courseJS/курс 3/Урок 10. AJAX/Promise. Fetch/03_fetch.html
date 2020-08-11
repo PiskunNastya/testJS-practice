@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=Kyiv&key=AIzaSyA9SO3tPbXBHlapgNdeaMa6O6Edf-cRZZM';
+		var init = {
+			method: 'GET'
+		};
+		fetch(url, init)
+				.then(function (resp) {
+					return resp.json();
+							}).then(function (data) {
+									console.log(data)
+											}).catch(function (err) {
+												console.log(err)
+													});
+		</script>
+</body>
+</html>

@@ -1,20 +1,26 @@
 #modal {
     position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     background-color: rgba(0,0,0,.8);
-    transform: translateY(1000px);
-    transition: transform linear 300ms;
-    top: 0;
-    left: 0;
-}
-
-.modal__visible {
-    transform: translateY(0px) !important;
-}
-
-form {
+    transform: translateY(100vh);           
+    /* сдвигаем элемент вниз относительно 100% экрана (Положительное значение сдвигает вниз) */
+    transition: transform linear 900ms;     
+    /* анимация формы */
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__visible { 
+    transform: translateY(0px) !important;  
+    /* сдвигаем элемент вниз относительно 100% экрана (отрицательное значение вверх) */
+} 
+
+/* form {
+    display: flex; 
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -26,10 +32,28 @@ form {
     top: 50%;
     margin-top: -100px;
     padding: 20px;
-}
+} 
 
 textarea {
     margin: 20px auto;
     height: 120px;
-    resize: none;
+    resize: none; 
+} */
+
+/* Размеры элемента не изменяются. */
+
+
+
+textarea {
+    height: 120px;
+    resize: none; 
+}
+
+
+form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 200px;
 }

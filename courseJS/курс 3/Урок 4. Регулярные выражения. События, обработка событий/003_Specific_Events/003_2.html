@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>onBeforeUnload</title>
+</head>
+<body>
+<script>
+
+      window.onbeforeunload = function() { // событие на закрытие вкладки
+        return "Данные не сохранены. Точно перейти? Не смейте!";
+      };
+
+</script>
+
+<!-- <button onclick="setHandler()">Поставить window.onbeforeunload</button> -->
+
+<!-- <a href="https://itea.ua/">Уйти</a> -->
+</body>
+</html>

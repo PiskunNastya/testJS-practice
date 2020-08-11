@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+
+<style>
+    article {
+        display: flex;
+        margin-bottom: 5rem;
+    }
+
+    .classNone {
+        display: none;
+    }
+
+</style>
+
+
+<body>
+    <!-- Создайте 5 блоков с текстом. Добавьте в каждый из блоков кнопку для его удаления.
+    Используйте только один обработчик.
+
+    Доработайте пример 004_Attr_Tech.html таким образом, чтобы при наведении на span элементы,
+    подсказка сплыва под ними, а не в модальном окне. Используйте addEventListener -->
+
+
+    <section>
+        <article>
+            <p>Текст 1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquam molestiae quo
+                quibusdam
+                minima voluptatem?</p>
+            <button type="button">Delete text 1</button>
+        </article>
+        <article>
+            <p>Текст 2 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquam molestiae quo
+                quibusdam
+                minima voluptatem?</p>
+            <button type="button">Delete text 2</button>
+        </article>
+        <article>
+            <p>Текст 3 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquam molestiae quo
+                quibusdam
+                minima voluptatem?</p>
+            <button type="button">Delete text 3</button>
+        </article>
+        <article>
+            <p>Текст 4 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquam molestiae quo
+                quibusdam
+                minima voluptatem?</p>
+            <button type="button">Delete text 4</button>
+        </article>
+        <article>
+            <p>Текст 5 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquam molestiae quo
+                quibusdam
+                minima voluptatem?</p>
+            <button type="button">Delete text 5</button>
+        </article>
+    </section>
+
+    <script>
+        var section = document.querySelector('section');
+
+        section.addEventListener('click', function(event) {
+            var target = event.target;
+
+            if(target.tagName !== 'BUTTON') {
+                return
+            }
+
+            var parentBatton = target.parentNode;
+            parentBatton.classList.toggle('classNone');
+        });
+
+    </script>
+
+
+</body>
+
+</html>

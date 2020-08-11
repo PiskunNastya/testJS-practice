@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fetch</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=Kyiv&key=AIzaSyA9SO3tPbXBHlapgNdeaMa6O6Edf-cRZZM';
+
+		fetch(url)
+		  .then(
+		    function(response) {
+		      if (response.status !== 200) {
+		        console.log('Looks like there was a problem. Status Code: ' + response.status);
+		        return;
+		      }
+
+		      response.json()
+					  .then(function(data) {
+							console.dir(data.results[0]);
+					  });
+		    }
+		  )
+		  .catch(function(err) {
+		    console.log('Fetch Error :-S', err);
+		  });
+	</script>
+</body>
+</html>

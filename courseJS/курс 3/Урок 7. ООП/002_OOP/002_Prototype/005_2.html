@@ -1,0 +1,27 @@
+<!-- constructor  содержит ссылку на функцию -->
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>Prototype</title>
+<body>
+    <script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        
+
+        var myBrother = new Person("Brother", "Ivanov_Brother", 24, "blue");
+
+        console.log(Person);
+        console.dir(Person);
+        console.log(myBrother);
+
+
+    </script>
+
+</body>
+</html>

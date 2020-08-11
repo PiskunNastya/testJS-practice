@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+      <meta charset="utf-8">
+      <title>Delegate</title>
+      <script>
+      window.onload = function () {
+          var menu = document.getElementById('menu');
+
+          if (menu) {
+
+              menu.addEventListener("click", function(e) {
+                var target = e && e.target || window.event.srcElement;
+                // console.log(target);
+                var href = target.getAttribute('href');
+
+                if (target.tagName !== 'A') {
+                    return
+                }
+                
+                console.dir(target);
+                alert(href);
+                e.preventDefault();
+                return false; // отменить переход по ссылке
+              });
+          };
+      };
+    </script>
+
+</head>
+<body>
+    <ul id="menu">
+        <li>
+            <a href="/one">1</a>
+        </li>
+        <li>
+            <a href="/two">2</a>
+        </li>
+        <li>
+            <a href="/three">3</a>
+        </li>
+        <li>
+            <a href="/four">4</a>
+        </li>
+        <li>
+            <span>5</span>
+        </li>
+    </ul>
+</body>
+</html>

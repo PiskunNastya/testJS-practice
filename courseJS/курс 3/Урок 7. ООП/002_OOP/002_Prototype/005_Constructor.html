@@ -1,0 +1,46 @@
+<!-- constructor  содержит ссылку на функцию -->
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>Prototype</title>
+<body>
+    <script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        var myBrother = new Person("Ivan", "Ivanov", 24, "blue");
+        console.log(myBrother.constructor === Person);
+        document.write("<br />");
+
+        Person.prototype = { men: true };
+
+        var myFather = new Person("Ivan", "Ivanov", 50, "blue");
+        console.log(myFather.constructor === Person);
+
+        class Square extends Polygon {
+            constructor(length) {
+                // Наступний рядок здійснює виклик успадкованого від Polygon
+                // конструктора, передаючи до нього власні параметри.
+                super(length, length);
+
+                // Завважте, що в класах-нащадках виклик super() завжди має передувати
+                // найпершому звертанню до this. Інакше матимете помилку.
+                this.name = 'Square';
+            }
+
+            get area() {
+                return this.height * this.width;
+            }
+
+            set area(value) {
+                this.area = value;
+            }
+        }
+    </script>
+
+</body>
+</html>

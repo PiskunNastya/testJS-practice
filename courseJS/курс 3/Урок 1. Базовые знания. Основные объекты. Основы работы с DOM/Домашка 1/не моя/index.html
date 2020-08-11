@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <p><strong>
+            <h1>Romashko Anton</h1>
+        </strong></p>
+    <ul id="myList">
+        <li id="1">List item 1</li>
+        <li id="2">List item 2</li>
+        <li id="3">List item 3</li>
+        <li id="4">List item 4</li>
+        <li id="5">List item 5</li>
+    </ul>
+    <button class="btn" id="first" onclick="getSpecialElement(this.id)">Ввыбрать первый элемент</button>
+    <br>
+    <button class="btn" id="last" onclick="getSpecialElement(this.id)">Выбрать последний элемент</button>
+    <br>
+    <button class="btn" id="next" onclick="getNextElement()">Выбрать следующий элемент</button>
+    <br>
+    <button class="btn" id="prev" onclick="getPreviousElement()">Выбрать предыдущий элемент</button>
+    <br>
+    <button class="btn" id="add" onclick="addElement()">Добавить элемент</button>
+    <br>
+    <button class="btn" id="pop" onclick="removeListElement()">Удалить элемент</button>
+    <br>
+    <button class="btn" id="begin" onclick="addToBegin()">Добавить в начало</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

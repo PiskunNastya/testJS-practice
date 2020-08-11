@@ -1,0 +1,23 @@
+<!-- split() - разбивает строку на массив подстрок в соответствии с регулярным выражением. -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>RexExp</title>
+</head>
+<body>
+
+<p id="demo">Лето,зима , осень, 2016 года</p>
+
+<button onclick="myFunction()">Пробовать</button>
+
+<script>
+    function myFunction() {
+        var tags = document.querySelector('#demo').innerHTML;
+        var patt = /\s*,\s*/;
+        var tagList = tags.split(patt);
+        console.log(tagList);
+    };
+</script>
+</body>
+</html>

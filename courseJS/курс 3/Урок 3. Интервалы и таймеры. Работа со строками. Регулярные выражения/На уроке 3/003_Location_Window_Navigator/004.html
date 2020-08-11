@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<head>
+    <meta charset='UTF-8'/>
+    <title>Парсинг URL</title>
+    <script>
+        //?login=admin&password=123
+        
+        function getArgs() {
+            var argsObj = {};
+            // console.log(location.search)                                            // вернет '?login=admin&password=123'
+            var query = location.search.substring(1);     // с '?login=admin&password=123' получаем 'login=admin&password=123', начинаем с 1 индекса
+            console.log(query);                                                     // получили 'login=admin&password=123'
+
+
+
+            var pairs = query.split("&");  
+            console.log(pairs);               // Разделение строки по амперсанду, получили  ["login=admin", "password=123"]
+
+            for (var i = 0; i < pairs.length; i++) {
+                
+                var pos = pairs[i].indexOf('=');            // Проверка пары "name=value", вернет индекс равно
+                console.log(pos)
+
+                if (pos == -1) continue;                    // Если в строке не найдено равно - пропустить
+                var argname = pairs[i].substring(0, pos);   // Получение имени
+                // например прилетает нулевой индекс, строка - "login=admin"
+                // метод substring возвращяет подстроку, между двумя указанными индексами, не включая их
+                // с "login=admin" получиться "login"
+
+
+
+                var value = pairs[i].substring(pos + 1);    // Получение значения
+                // если аргумент один, то индекс аргумента включаеться в строку
+                // на первой итерации индекс "=" будет 5
+                // "login=admin", для того что б не захватить в значение "=", в аргумент добавляем +1
+
+
+
+                console.log(value);
+                argsObj[argname] = value;                   // Сохранение как свойства
+            }
+            // console.log(argsObj);
+            return argsObj;
+        }
+        // для теста примера перейдите по URL текущей страницы location + ?login=admin&password=123
+        function parseIt() {
+            var args = getArgs();                                                   // вернет {login: "admin", password: "123"}
+            var createParagraph = document.createElement("p");
+            createParagraph.innerHTML = "Login " + args.login + "<br />";
+            createParagraph.innerHTML += "Password " + args.password;
+            document.body.appendChild(createParagraph);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        // var array = ["password=123"];
+        // var array2 = ["password123"];
+        
+        // console.log(array.indexOf('='));
+        // console.log(array2.indexOf('='));
+
+
+
+
+        // var str = 'dd=123';             // вернет индекс 2
+        // var str2 = 'password123';       // вернет -1, нет в строке равно
+
+        // console.log(str.indexOf('='));
+        // console.log(str2.indexOf('='));
+
+
+        // var str = 'hello,Oword!';
+        // str = '0123456789'
+        // console.log(str.substring(6)); //6789
+
+
+        // var x = "login=admin".substring(5 + 1); //admin
+        // console.log(x);
+
+        // если аргумент один, то индекс аргумента включаеться в строку
+
+
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="Получить логин и пароль" onclick="parseIt()" />
+</body>
+</html>

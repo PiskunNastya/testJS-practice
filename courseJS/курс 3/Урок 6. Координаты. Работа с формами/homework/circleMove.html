@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>circleMove</title>
+
+    <style>
+        * {
+            margin: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: darkcyan;
+            border-radius: 50px;
+            position: absolute;
+        }
+
+        button {
+            margin: 150px 50px;
+        }
+
+        body {
+            /* width: 100%;
+            height: 100vh; */
+            background-color: darksalmon;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <button type="button">Click</button>
+
+    <script>
+        var circle = document.querySelector('div');
+        var button = document.querySelector('button');
+        var interval;
+        var positionCircle;
+
+
+        circle.addEventListener('click', circleWork);
+
+        function circleWork() {
+            interval = setInterval(function () {
+                var infoPosition = circle.getBoundingClientRect().left;
+                circle.style.left = infoPosition + 1 + 'px';
+                positionCircle = circle.style.left;
+
+
+                var monitorWidth = document.body.clientWidth;
+
+                if (monitorWidth < infoPosition) {
+                    circle.style.left = '0px';
+                }
+            }, 10);
+        }
+
+        button.addEventListener('click', function() {
+            clearInterval(interval);
+            circle.style.left = positionCircle;
+        });
+
+
+
+    </script>
+</body>
+
+</html>

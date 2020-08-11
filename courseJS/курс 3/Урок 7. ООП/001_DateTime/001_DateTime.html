@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DateTime</title>
+    <script>
+        /* конструктор Date создает объект с текущей датой и временем: */
+        var a = new Date();
+        alert(a);
+        // new Date(milliseconds)
+        // Создает объект Date, значение которого равно количеству миллисекунд (1/1000 секунды), прошедших с 1 января 1970 года GMT+0
+        // 24 часа после 01.01.1970 GMT+0
+        var Jan02_1970 = new Date(3600*24*1000);
+        alert(Jan02_1970);
+
+        // new Date(dateString) можно использовать один из форматов:
+        // "October 13, 1975 11:13:00"
+        // "October 13, 1975 11:13"
+        // "October 13, 1975"
+        // 2010/08/17 12:09:36
+        var dateString = "2011/08/17 12:09:36";
+        var YearsAgo = new Date(dateString);
+        document.write(YearsAgo);
+
+        var detailedDate = new Date(2011, 0, 1, 2, 3, 4, 567);
+        console.log(detailedDate);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

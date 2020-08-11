@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: crimson;
+        position: absolute;
+        top: 50px;
+        left: 150px;
+    }
+</style>
+
+<body>
+
+    <div id="mydiv"></div>
+
+    <script>
+        var mydiv = document.getElementById('mydiv');
+        mydiv.addEventListener('mousedown', eventMousedown);
+
+
+        function eventMousedown(event) {
+            var clickCoordinaresSquared_X = event.offsetX;      // узнаем координаты клика относительно радительского элемента
+            var clickCoordinaresSquared_Y = event.offsetY;      // узнаем координаты клика относительно радительского элемента
+
+            document.addEventListener('mouseup', function() {
+                document.removeEventListener('mousemove', eventMousemove);      // удаляем обработчик события 
+            });
+
+
+            document.addEventListener('mousemove', eventMousemove);
+
+            function eventMousemove(event) {
+                var moveMouseX = event.clientX;                 // узнаем координаты клика относительно экрана            
+                var moveMouseY = event.clientY;                 // узнаем координаты клика относительно экрана 
+
+
+                mydiv.style.top = moveMouseY - clickCoordinaresSquared_Y + 'px';
+                mydiv.style.left = moveMouseX - clickCoordinaresSquared_X + 'px';
+
+            };
+        }
+
+
+        
+
+    </script>
+
+</body>
+
+</html>

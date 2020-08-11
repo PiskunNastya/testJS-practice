@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .active {
+            background-color: salmon;
+        }
+    </style>
+</head>
+<body>
+    <ul class="list" id="list">
+        <li class="item">List item 1</li>
+        <li class="item">List item 2</li>
+        <li class="item">List item 3</li>
+        <li class="item">List item 4</li>
+        <li class="item">List item 5</li>
+    </ul>
+
+    <button onclick="selectFirstItem()">Выбрать первый элемент</button>
+    <button onclick="selectLastItem()">Выбрать последний элемент</button>
+    <button onclick="selectNextItem()">Выбрать следующий элемент</button>
+
+    <script>
+        var list = document.getElementById('list');
+        var itemFirst = list.querySelector('li');
+
+        var listItems = list.getElementsByTagName('li');
+        console.log(listItems);
+
+        console.log(list.children);
+
+        function selectFirstItem() {
+            itemFirst.classList.add('active');
+        }
+
+        function selectLastItem() {
+            var lastItem = listItems[listItems.length - 1];
+            lastItem.classList.add('active'); 
+        }
+
+        function selectNextItem() {
+
+            for (var i = 0; i < list.children.length; i++) {
+                // list.children[i].classList.remove('active'); 
+                // работает
+                // берем у <ul> все дочерние элементы и перебираем их
+
+                listItems[i].classList.remove('active');
+                // работает тоже
+                // берем уже заренее сохраненный в переменную псевдо массив (коллекцию элементов) и перебираем их
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

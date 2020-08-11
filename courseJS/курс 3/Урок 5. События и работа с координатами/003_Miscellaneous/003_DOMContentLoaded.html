@@ -1,0 +1,29 @@
+<!-- http://javascript.ru/tutorial/events/ondomcontentloaded - кроссбраузерная реализация -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>DOMContentLoaded</title>
+    <script>
+    window.addEventListener("load", function () {
+            console.log("onload");
+        });
+    window.addEventListener("DOMContentLoaded", function() {
+        console.log("DOMContentLoaded");
+    });
+        
+    </script>
+</head>
+<body>
+    <iframe src="https://itea.ua/" height="80"></iframe>
+    <script>
+        function handler() {
+            console.log('DOM готов (а iframe - нет)');
+        };
+        document.addEventListener("DOMContentLoaded", handler);
+        
+    </script>
+    <iframe src="https://itea.ua/" height="80"></iframe>
+</body>
+</html>
+

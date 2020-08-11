@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Чтение Cookie</title>
+    <script type="text/javascript">
+        function setCookie() {
+            // Что бы связать временное значение cookie файла с текущим документом. достаточно выполнить следующую операцию
+            document.cookie = "version=" + encodeURIComponent(document.lastModified);               // взяли последнее изменение 
+                                                                                                    // в текстовом документе и закодировали
+        };
+
+        function getCookie() {
+            alert(findCookieValue("version"));
+            alert(document.cookie);  //test
+        }; 
+ 
+        function findCookieValue(cookieName) {
+            var allcookies = document.cookie; 
+            var pos = allcookies.indexOf(cookieName + "="); 
+
+            console.log(allcookies);
+            // в консоли - info=123; cooki=12345ololo; version=07%2F28%2F2020%2016%3A37%3A57
+
+            console.log(pos);
+            // в консоли - 28
+            // если б нечего метод indexOf совпадений бы не нашел, то вернул бы -1
+
+            console.log(cookieName.length);
+
+            // Если cookie с указанным именем найден, извлечь его значения.
+            if (pos != -1) {                                            // совпадение найдено
+                var start = pos + cookieName.length + 1;                // 'info=123; cooki=12345ololo; ' + 'version' + '='
+                var end = allcookies.indexOf(";", start);               // стартуем с 'info=123; cooki=12345ololo; version='
+                                                                        // это нужно для того что метод indexOf определяет самый первый
+                                                                        // ";", а в строке их много
+
+                if (end == -1) {                                        // если метод indexOf не находит ";"
+                    end = allcookies.length;                            // конец считаеться полная длинна строки
+                } 
+
+                var value = allcookies.substring(start, end);
+                return decodeURIComponent(value);                       // раскодировали то что вначале закодировали
+            }
+        };
+    </script>
+
+</head>
+<body>
+    <input type="button" value="Задать cookie" onclick="setCookie()" />
+    <input type="button" value="Прочитать cookie" onclick="getCookie()" />
+</body>
+</html>

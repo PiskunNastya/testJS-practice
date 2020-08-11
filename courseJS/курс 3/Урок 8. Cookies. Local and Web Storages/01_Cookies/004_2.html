@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Функции encodeURIComponent и decodeURIComponent</title>
+    <script>
+
+        window.addEventListener("load", function () {
+            var encodeBtn = document.getElementById("encodeBtn");
+            var decodeBtn = document.getElementById("decodeBtn");
+            var forDecode = document.getElementById("forDecode");
+            var forEncode = document.getElementById("forEncode")
+            var decodedOutput = document.getElementById("decodedOutput");
+            var encodedOutput = document.getElementById("encodedOutput");
+
+            encodeBtn.addEventListener("click", function () {
+                // URL кодирование данных
+                var res = encodeURIComponent(forEncode.value);
+                    encodedOutput.innerHTML = res; 
+            });
+
+            decodeBtn.addEventListener( "click", function () {
+                // URL декодирование данных
+                var result = decodeURIComponent(forDecode.value);
+                decodedOutput.innerHTML = result;
+            });
+
+            function getId(id) {
+                console.log('ololo')
+                return document.getElementById(id);
+            };
+
+            getId("encodedOutput").style.color = "red";
+
+        });
+
+</script>
+</head>
+<body>
+    <label>
+        Текст для кодирования <input id="forEncode" /><input id="encodeBtn" type="button" value="Кодировать" />
+    </label>
+    <p id="encodedOutput"></p>
+
+    <label>
+        Текст для декодирования <input id="forDecode" /><input id="decodeBtn" type="button" value="Декодировать" />
+    </label>
+    <p id="decodedOutput"></p>
+</body>
+</html>

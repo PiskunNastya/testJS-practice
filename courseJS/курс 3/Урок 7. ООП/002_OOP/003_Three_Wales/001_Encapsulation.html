@@ -1,0 +1,32 @@
+<!-- Инкапсуляция - сокрытие реализаци. -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Инкапсуляция</title>
+    <script type="text/javascript">
+
+        var MyClass = function () {
+
+            // закрытый метод
+            function privateMethod () {
+                document.write("Закрытый метод");
+            }
+
+            // открытый метод
+            this.publicMethod = function () {
+                document.write("Открытый метод <br />");
+                privateMethod();
+            };
+
+        };
+        var obj = new MyClass();
+        obj.publicMethod();
+
+        obj.privateMethod(); // ошибка
+
+    </script>
+</head>
+<body>
+</body>
+</html>
+

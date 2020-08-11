@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Validation</title>
+    <style type="text/css">
+        .invalid {
+            background-color: Pink;
+        }
+
+        .valid {
+            background-color: LightGreen;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="submit"] {
+            width: 150px;
+        }
+
+        body {
+            background-color: darkseagreen;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Моя форма</h1>
+    <form name="form1">
+        <label>Name:<input type="text" name="userName"></label>
+        <label>email:<input type="text" name="email"></label>
+        <label>zipcode:<input type="text" name="zip"></label>
+
+        <input type="submit">
+    </form>
+
+    <script>
+        var userName = document.querySelector('[name="userName"]');     
+        var email = document.querySelector('[name="email"]');
+        var zip = document.querySelector('[name="zip"]');
+        var button = document.querySelector('[type="submit"]');
+
+        var flag_userName = false;
+        var flag_email = false;
+        var flag_zip = false;
+
+        var result_userName = '';
+        var result_email = '';
+        var result_zip = '';
+
+        userName.addEventListener('change', function (event) {
+            var pattern = /\S/
+            result_userName = event.target.value;                           // записываем в переменную value
+
+            if (pattern.test(result_userName)) {                            // если регулярка есть в value инпута
+                flag_userName = true;
+                userName.classList.remove('invalid');
+                userName.classList.add('valid');
+            } else {
+                flag_userName = false;
+                userName.classList.remove('valid');
+                userName.classList.add('invalid');
+            }
+        });
+
+        email.addEventListener('change', function () {
+            var pattern = /\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b/i;
+            result_email = event.target.value;                              // записываем в переменную value
+
+            if (pattern.test(result_email)) {                               // если регулярка есть в value инпута
+                flag_email = true;
+                email.classList.remove('invalid');                          
+                email.classList.add('valid');
+            } else {
+                flag_email = false;
+                email.classList.remove('valid');
+                email.classList.add('invalid');
+            }
+        });
+
+        zip.addEventListener('change', function () {
+            var pattern = /\d{5}/;
+            result_zip = event.target.value;                                                // записываем в переменную value
+
+            if (pattern.test(result_zip)) {                                                 // если регулярка есть в value инпута
+                flag_zip = true;
+                zip.classList.remove('invalid');
+                zip.classList.add('valid');
+            } else if (pattern.test(result_zip) === false) {
+                flag_zip = false;
+                zip.classList.remove('valid');
+                zip.classList.add('invalid');
+            }
+        });
+
+        button.addEventListener('click', function (event) {
+            if (!flag_userName || !flag_email || !flag_zip) {              // если какой то либо флаг будет false
+                alert('исправьте данные');
+                userName.classList.add('invalid');
+                email.classList.add('invalid');
+                zip.classList.add('invalid');
+                event.preventDefault();
+                return false;
+            } else {
+                return alert('отправка');
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

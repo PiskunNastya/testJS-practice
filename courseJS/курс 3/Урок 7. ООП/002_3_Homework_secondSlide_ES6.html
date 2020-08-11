@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        class Doctor {
+            constructor() {
+
+            }
+            walk() {
+                console.log('Doctor walk');
+            }
+            eat() {
+                console.log('Doctor eat');
+            }
+            drink() {
+                console.log('Doctor drink');
+            }
+        }
+
+        class Dentist extends Doctor {
+            constructor(){
+                super();
+            }
+            cure() {
+                console.log('Treat teeth');
+            }
+        }
+
+        class Surgeon extends Doctor {
+            constructor() {
+                super();
+            }
+            cure() {
+                console.log('Perform operation');
+            }
+        }
+
+        var dentist = new Dentist();
+        var surgeon = new Surgeon();
+
+        console.log(dentist);
+        dentist.cure();
+        surgeon.cure();
+    </script>
+</body>
+</html>

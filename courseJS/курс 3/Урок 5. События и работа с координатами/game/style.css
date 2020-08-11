@@ -1,0 +1,80 @@
+* {
+    cursor: crosshair;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    background: url(photo_2020-07-13_20-44-07-2.jpg) center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;  /* родитель контейнер, утка абсолют */
+}
+
+#duck {
+    position: absolute;
+    z-index: 99;
+}
+
+#counter {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: black;
+    z-index: 9;
+    color: whitesmoke;
+    width: 100px;
+    height: 50px;
+    border-radius: 12px;
+    border: 3px double whitesmoke;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+}
+
+img {
+    height: 60px;
+}
+
+#game-over {
+    position: absolute;
+    z-index: 999;
+    transform: translateY(-1100px);
+    transition: transform 500ms linear;
+    background-color: rgba(0,0,0,.75);
+    font-size: 60px;
+    text-transform: uppercase;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    color: whitesmoke;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#restart {
+    display: block;
+    font-size: 24px;
+    background: #f4f4f4;
+    border: 3px double #000;
+    border-radius: 12px;
+    padding: 7px 12px;
+    transition: 250ms background linear;
+    cursor: pointer;
+}
+
+#restart:hover {
+    background: rgb(194, 141, 141);
+}
+
+.appear {
+    transform: translateY(0px) !important;
+}

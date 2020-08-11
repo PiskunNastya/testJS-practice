@@ -1,0 +1,129 @@
+<!-- Создайте функцию, которая возвращает день недели для даты.
+День нужно возвратить в формате - понедельник имеет номер 1, вторник номер 2, …, воскресенье - номер 7. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+
+<body>
+
+    <form>
+        <label>
+            Введите пожалуйста дату в формате - 24.07.2020
+            <input type="text">
+        </label>
+        <input type="submit" value="Кнопка">
+    </form>
+    
+
+    <script>
+        var form = document.querySelector('form');
+        var input = document.querySelector('[type="text"]');
+        var button = document.querySelector('[type="submit"]');
+
+        var datе;
+        var statusValidator = false;                                                // флаг
+        var day;
+
+
+
+        input.addEventListener('input', function(event) {
+            datе = event.target.value;
+            
+            var regExp = /^[0-3][0-9]\.[0-1][0-9]\.[0-3][0-9][0-9][0-9]$/
+
+            if(regExp.test(datе)) {                                                 // если есть совпадения:
+                input.style.background = 'rgba(69, 126, 69, 0.24)';                 // зеленый
+                statusValidator = true;
+            } else if (datе.length === 0) {                                         // если инпут пустой
+                input.style.background = 'none';
+                statusValidator = false;
+            } else {
+                input.style.background = 'rgba(207, 49, 49, 0.644)';                // красный
+                statusValidator = false;
+            }
+        });
+
+
+
+
+        button.addEventListener('click', function(event) {
+
+            var p = document.createElement('p');                                    // в р будем записывать результат
+
+            if (statusValidator) {                                                  // если флаг на проверку валидации возвращает true
+                var number = datе.slice(0, 2);                                      // например 24
+                var month = datе.slice(3, 5);                                       // например 07
+                var year = datе.slice(6);                                           // например 2020
+
+                if(month === '01') {                                                
+                    month = 1;
+                } else if (month === '11') {
+                    month = 12;
+                } else {
+                    conversionToNumber = parseInt(month, 10);                       //если введут например 5 мес, то от него отнимаем -1
+                    month = conversionToNumber - 1;                                 // мес считаються с 0
+                }
+
+                var setDate = new Date();                                           // создаем класс 
+                setDate.setDate(number);                                            // устанавливаем число
+                setDate.setMonth(month);                                            // устанавливаем мес
+                setDate.setFullYear(year);                                          // устанавливаем год
+
+                var result = setDate.getDay();                                      // получаем с даты день
+
+
+                if(result === 0) {                                                  // если 0, то это воскресенье
+                    result = 7;                                                     // воскресенье под номером 7
+                }
+
+                switch(result) {
+                    case 1:
+                        day = 'Понедельник';
+                        break;
+                    case 2:
+                        day = 'Вторник';
+                        break;
+                    case 3:
+                        day = 'Среда';
+                        break;
+                    case 4:
+                        day = 'Четверг';
+                        break;
+                    case 5:
+                        day = 'Пятница';
+                        break;
+                    case 6:
+                        day = 'Суббота';
+                        break;
+                    case 7:
+                        day = 'Воскресенье';
+                        break;
+                }
+
+                
+                p.innerText = `Ваш ответ - ${datе}.
+                Ваш день - ${day}.
+                Номер дня вашего дня ${result}, где понедельник это 1, а воскресенье 7`;
+                form.insertAdjacentElement('afterEnd', p);
+
+            } else {
+                p.innerText = 'Введите корректно дату!';
+                form.insertAdjacentElement('afterEnd', p);
+            }   
+            
+            event.preventDefault();                                         // поставила type="submit" и отменила браузерное событие отправки формы
+        });
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

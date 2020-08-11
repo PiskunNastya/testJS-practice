@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+
+    <style>
+        p {
+            font-size: 28px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Создайте счетчик секунд, который начинает отчет с 1 и заканчивается на 30,
+также добавьте кнопки которые останавливают отчет, и запускают его заново и добавьте кнопку
+обнуляющую отcчет. Также попробуйте изменить код так чтобы отсчет начинался с 30 и заканчивался на 1. -->
+
+    <input type="button" value="Старт счетчика от 1 до 30">
+    <input type="button" value="Остановить счетчик">
+    <input type="button" value="Обнулить счетчик">
+
+    <p></p>
+
+    <script>
+        var counterStart = document.getElementsByTagName('input')[0];
+        var counterStop = document.getElementsByTagName('input')[1];
+        var counterReset = document.getElementsByTagName('input')[2];
+        var counterDispley = document.querySelector('p');
+        var counter = 0;
+        var result;
+
+
+        // ВОПРОС. Если нажать несколько раз на кнопку "Старт счетчика от 1 до 30", то 30 секунд посчитает быстрее
+        // тоесть счетчик ускориться
+        // как этого избежать?
+        function startButton() {
+            result = setInterval(function() {
+            counter += 1;
+            counterDispley.innerText = counter;
+
+            if(counter >= 30) {
+                clearInterval(result);
+                counterDispley.innerText = 30;
+            }
+
+            }, 1000);
+
+        }
+
+
+        function stopButton() {
+            clearInterval(result);
+            counterDispley.innerText = counter;
+        }
+
+
+        function resetButton() {
+            clearInterval(result);
+            counter = 0;
+            counterDispley.innerText = counter;
+        }
+
+
+
+        counterStart.addEventListener('click', startButton);
+        counterStop.addEventListener('click', stopButton);
+        counterReset.addEventListener('click', resetButton);
+
+
+    </script>
+
+</body>
+
+</html>

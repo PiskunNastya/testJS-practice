@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Объект Event</title>
+</head>
+
+<body>
+    <!-- <input type="button" name="name" value="some value" id="firstButton">
+<input type="button" name="othername" value="other value" id="secondButton"> -->
+
+    <input type="button" id="elem" onclick="alert('Было')" value="Нажми меня">
+
+    <script>
+        elem.onclick = function () { // перезапишет существующий обработчик
+            alert('Станет'); // выведется только это
+        };
+
+
+
+
+        // var firstButton = document.getElementById("firstButton");
+        // firstButton.onclick = clickHandler;
+        // function clickHandler(event){
+        //     if (!event) event = window.event; // fix for IE - регистрируем информацию о событии для IE
+        //     console.log(event);
+        // }
+
+        // var secondButton = document.getElementById("secondButton");
+        // // Событие onmouseover срабатывает, когда курсор мыши наводится на элемент
+        // secondButton.onmouseover = moveHandler; 
+        // function moveHandler(event) {
+        //     var e = event || window.event;
+        //     // fix for IE
+        //     console.log(e);
+        // }
+
+        // console.log(window.event);
+    </script>
+</body>
+
+</html>

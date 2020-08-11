@@ -1,0 +1,68 @@
+<!-- 
+    Запросите у пользователя ввести какую-то фразу. 
+    Отобразите каждое отдельное слово в виде списка ul li. 
+    Также отобразите первое слово UPPERCASE, а последние 2 с маленькой. 
+    Найдите все буквы "а" их количество в модальное окно. 
+ -->
+ 
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+<body>
+
+    <form>
+        <input type="text">
+        <input type="button" value="Cгенерировать список">
+    </form>
+
+    
+    <script>
+        var button = document.getElementsByTagName('input')[1];             // добрались к кнопке
+        var form = document.querySelector('form');                          // добрались к форме
+
+
+        function eventButton() {                                            // функция события
+            var valueInput = document.querySelector('[type="text"]');       // записываем инпут в переменную
+            var text = valueInput.value;                                    // получаем значение инпута
+            var newElem_ul = document.createElement('ul');                  // создаем ul
+            form.after(newElem_ul);                                         // вставляем ul после формы                                 
+
+
+            var array = text.split(' ');                                    // переводим полученный текст с инпута в массив, разделитель пробел 
+
+
+            for(var i = 0; i < array.length; i++) {                         // проходимся по массуву циклом
+
+                var newElem_li = document.createElement('li');              // при каждой иттерации создаем li
+
+                if(i === 0) {                                                           // если индекс равно 0
+                    newElem_li.innerHTML = array[i].toUpperCase();                      // все буквы большие
+                    newElem_ul.append(newElem_li);                                      // помещяем li в ul
+                } else if (array[array.length - 1] || array[array.length - 2]) {        // если два последних элем
+                    newElem_li.innerHTML = array[i].toLowerCase();                      // то мал буквы
+                    newElem_ul.append(newElem_li);                                      // помещяем li в ul
+                } else {
+                    newElem_li.innerHTML = array[i];
+                    newElem_ul.append(newElem_li);                                      // помещяем li в ul
+                }
+            }
+
+            var regExp = /\a/g;                                                         // регулярка работает с анг
+            var resultArray_regExp = text.match(regExp);
+
+            alert (`в вашем тексте ${resultArray_regExp.length} букв 'а'`);
+        }
+
+
+        button.addEventListener('click', eventButton);
+
+
+        // VVlLLLLooaoo ggag HaHH jjajj KKaK KaK
+
+    </script>
+
+</body>
+</html>

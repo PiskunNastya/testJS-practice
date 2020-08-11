@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Checboxes and radio</title>
+    <script>
+    window.onload = function () {
+        var input = document.body.children[0];
+
+
+        console.log(input.id);
+        console.log(input.checked);
+        console.log(input.name);
+
+        // alert(input.checked); // Оптимальный вариант
+
+        // alert(input.getAttribute('checked'));
+
+        var radio = document.body.children[1];
+
+        console.log(radio.id);
+        console.log(radio.checked);
+        console.log(radio.name);
+        
+
+        // alert(radio.checked); // Оптимальный вариант
+
+        // alert(radio.getAttribute('checked'));
+    };
+    </script>
+</head>
+<body>
+    <input type="checkbox" checked="" id="ololo" name="ha">
+    <input type="radio">
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: rgb(221, 196, 201);
+            height: 100vh;
+            margin: 0;
+        }
+
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            position: absolute;
+        }
+
+        button {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div></div>
+
+
+    <script>
+        // var body = document.querySelector('body');
+        var div = document.querySelector('div');
+
+        var moveX_inBody;
+        var moveY_inBody;
+
+        var clickCoordinatesX_inDiv;
+        var clickCoordinatesY_inDiv;
+
+        window.addEventListener('mousedown', function (event) {
+            var target = event.target;
+
+            if(target.tagName !== 'DIV') {
+                return
+            }
+            
+            clickCoordinatesX_inDiv = event.clientX;
+            clickCoordinatesY_inDiv = event.clientY;
+            console.log(clickCoordinatesX_inDiv, clickCoordinatesY_inDiv);
+
+            window.addEventListener('mousemove', function (event) {
+
+                console.log(event.clientX)
+                console.log(event.clientY)
+
+            });
+
+        });
+
+        
+
+
+        // body.addEventListener('mousemove', function (event) {
+        //     moveX_inBody = event.clientX;
+        //     moveY_inBody = event.clientY;
+
+
+
+        //     clickCoordinatesX_inDiv.clientX = moveX_inBody;
+        //     clickCoordinatesY_inDiv.clientY = moveY_inBody;
+
+        //     div.addEventListener('mousedown', function (event) {
+        //         clickCoordinatesX_inDiv = event;
+        //         clickCoordinatesY_inDiv = event;
+
+        //     });
+
+        //     console.log(clickCoordinatesX_inDiv);
+        //     console.log(clickCoordinatesX_inDiv.clientX);
+
+        // });
+
+
+
+
+
+
+        // div.addEventListener('mousedown', function (event) {
+
+        //     clickCoordinatesX_inDiv = event;
+        //     clickCoordinatesY_inDiv = event;
+
+
+        //     body.addEventListener('mousemove', function (event) {
+        //         moveX_inBody = event.clientX;
+        //         moveY_inBody = event.clientY;
+
+        //         clickCoordinatesX_inDiv.clientX = moveX_inBody;
+        //         clickCoordinatesY_inDiv.clientY = moveY_inBody;
+
+        //         console.log(clickCoordinatesX_inDiv.clientX);
+        //         // console.log(clickCoordinatesY_inDiv.clientY);
+
+        //         // console.log(moveX_inBody, moveY_inBody);
+        //     });
+
+
+        // });
+
+
+
+
+        // div.addEventListener('mousedown', function (event) {
+        //     // clickCoordinatesX_inDiv = event.clientX;
+        //     // clickCoordinatesY_inDiv = event.clientY;
+        //     // console.log(clickCoordinatesX_inDiv, clickCoordinatesY_inDiv);
+
+        //     clickCoordinatesX_inDiv = event;
+        //     clickCoordinatesY_inDiv = event;
+        //     // console.log(clickCoordinatesX_inDiv);
+        //     // console.log(clickCoordinatesY_inDiv);
+
+        //     body.addEventListener('mousemove', function (event) {
+        //         moveX_inBody = event.clientX;
+        //         moveY_inBody = event.clientY;
+
+        //         // console.log(moveX_inBody);
+        //         // console.log(moveY_inBody);
+
+
+
+        //         clickCoordinatesX_inDiv.clientX = moveX_inBody;
+        //         clickCoordinatesY_inDiv.clientY = moveY_inBody;
+
+        //         console.log(clickCoordinatesX_inDiv.clientX);
+        //         console.log(clickCoordinatesY_inDiv.clientY);
+
+
+        //         // clickCoordinatesX_inDiv = event.clientX;
+        //         // clickCoordinatesY_inDiv = event.clientY;
+
+        //         // console.log(clickCoordinatesX_inDiv);
+        //     });
+
+        //     // console.log(moveX_inBody);
+        //     // event.clientX = moveX_inBody;
+        //     // event.clientY = moveY_inBody;
+        // });
+
+
+
+
+
+        // div.addEventListener('mousedown', function (event) {
+        //     clickCoordinatesX_inDiv = event.clientX;
+        //     clickCoordinatesY_inDiv = event.clientY;
+
+
+
+        // });
+
+
+        // body.addEventListener('mousemove', function (event) {
+        //     moveX_inBody = event.clientX;
+        //     moveY_inBody = event.clientY;
+
+
+
+        //     // clickCoordinatesX_inDiv = moveX_inBody;
+        //     // clickCoordinatesY_inDiv = moveY_inBody;
+
+        //     // console.log(clickCoordinatesX_inDiv)
+
+
+        // });
+
+
+        // body.addEventListener('mousemove', function (event) {
+        //     moveX_inBody = event.clientX;
+        //     moveY_inBody = event.clientY;
+
+        //     div.addEventListener('mousedown', function (event) {
+
+        //         // clickCoordinatesX_inDiv = event.clientX;                   
+        //         // clickCoordinatesY_inDiv = event.clientY;
+
+        //         event.clientX = moveX_inBody;
+        //         event.clientY = moveY_inBody;
+
+        //     });
+
+
+
+
+        //     // clickCoordinatesX_inDiv = moveX_inBody;
+        //     // clickCoordinatesY_inDiv = moveY_inBody;
+        // });
+
+
+        // div.addEventListener('mousedown', function (event) {
+
+        //     moveX_inBody = event.clientX;
+        //     moveY_inBody = event.clientY;
+
+        //     clickCoordinatesX_inDiv = event.clientX;
+        //     clickCoordinatesY_inDiv = event.clientY;
+
+        //     // console.log(clickCoordinatesX_inDiv, clickCoordinatesY_inDiv);
+
+        // });
+
+        // body.addEventListener('mousemove', function (event) {
+        //     // moveX_inBody = event.clientX;
+        //     // moveY_inBody = event.clientY;
+        //     // console.log(moveX_inBody, moveY_inBody);         // работает
+
+        //     // console.log(event.clientX)
+
+        //     // event.clientX = clickCoordinatesX_inDiv;
+        //     // event.clientY = clickCoordinatesY_inDiv;
+
+        //     clickCoordinatesX_inDiv = event.clientX;
+        //     clickCoordinatesY_inDiv = event.clientY;
+
+
+        //     // console.log(clickCoordinatesX_inDiv);
+
+        // });
+
+
+
+
+        // event.clientX = moveX_inBody;
+        // event.clientY = moveY_inBody;
+
+
+        // console.log(moveX_inBody, moveY_inBody);
+
+
+        // clickCoordinatesX_inDiv = event.clientX;
+        // clickCoordinatesY_inDiv = event.clientY;
+
+        // div.style.top = moveY + 'px';
+        // div.style.left = moveX + 'px';
+
+        // console.log(moveY, moveX);
+    </script>
+
+
+
+</body>
+
+</html>
+
+
+
+
+<!-- <script>
+        var div = document.querySelector('div');
+        var button = document.querySelector('button');
+
+        button.addEventListener('click', function() {
+            div.style.top = '50px';
+            div.style.left = '300px';
+        });
+    </script> -->

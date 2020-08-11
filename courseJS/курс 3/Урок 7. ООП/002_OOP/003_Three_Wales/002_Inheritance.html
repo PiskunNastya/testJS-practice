@@ -1,0 +1,86 @@
+<!-- Наследование-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Наследование</title>
+    <script type="text/javascript">
+        /** ES5 **/
+// ---- родительский класс ----
+
+        function Animal(name, walkSpeed) {
+            this.name = name;
+            this.walkSpeed = walkSpeed;
+            // добавляем методы объекта
+            this.showInfo = function () {
+                document.write("Эта животное " + this.name + " передвигается со скоростью " + this.walkSpeed + "<br />");
+            };
+        };
+        
+        // ---- класс наследник ----
+
+        // function Bird(name, walkSpeed) {
+            this.name = name;
+            this.walkSpeed = walkSpeed;
+        };
+
+        function Predator(name, walkSpeed) {
+            this.name = name;
+            this.walkSpeed = walkSpeed;
+        };
+
+        Bird.prototype = new Animal();
+        Predator.prototype = new Animal();
+
+        console.dir()
+
+        var bird = new Bird("Owl", 50);
+        var wolf = new Predator("Wolf", 70);
+
+        bird.showInfo();
+        wolf.showInfo();
+
+
+        // bird.__proto__.showInfo();
+
+        console.log(bird)
+
+
+
+
+
+
+
+
+    /** ES6 < **/
+
+        class Person {
+            constructor(name, surname) {
+                this.name = name;
+                this.surname = surname
+            }
+            showName () {
+                return `${this.name} ${this.surname}`
+            }
+        }
+
+        class Profession extends Person {
+            constructor(name, surname, langName) {
+                super(name, surname);
+                this.langName = langName
+            }
+            showName () {
+                return `${this.name} ${this.surname}, he likes ${this.langName}`
+            }
+        }
+
+        let me = new Profession('Yegor', 'Markevich', 'javascript');
+
+        console.log(me);
+        console.log(me.showName())
+
+    </script>
+</head>
+<body>
+</body>
+</html>
+

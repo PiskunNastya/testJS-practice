@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // var foo = {
+        //     prop: 'tyu',
+        //     isTrue: true,
+        //     baz: function() {
+        //         console.log(foo.prop);
+        //     }
+        // };
+
+        // var bar = {
+        //     prop: 'lfclfkf'
+        // }
+
+        // foo.baz();
+
+
+
+        var foo = {
+            prop: 'tyu',
+            isTrue: true,
+            baz: function() {
+                console.log(this.prop);
+            }
+        };
+
+        var bar = {
+            prop: 'lfclfkf'
+        }
+
+        bar.__proto__ = foo;
+        console.log(bar);
+        bar.baz();
+
+
+
+
+    </script>
+</body>
+</html> 

@@ -1,0 +1,30 @@
+<!-- Объект Promise (обещание) используется для отложенных и асинхронных вычислений. Promise может находиться в трёх состояниях:
+
+	- ожидание (pending): начальное состояние, не выполнено и не отклонено.
+	- выполнено (fulfilled): операция завершена успешно.
+	- отклонено (rejected): операция завершена с ошибкой.
+	- Другой термин, описывающий состояние заданный (settled): обещание выполнено или отклонено, но не находится в состоянии ожидания.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Promise</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// new Promise(executor);
+		// new Promise(function(resolve, reject) { /*...*/ });
+		
+		// executor
+		// Объект функции с двумя аргументами resolve и reject. Первый аргумент вызывает успешное выполнение обещания, второй отклоняет его.
+		// Мы можем вызывать эти функции по завершении нашей операции.
+
+		let promise = new Promise(function(resolve, reject) {
+			setTimeout(() => resolve(alert("done!")), 1000);
+			setTimeout(() => reject(alert("not done!")), 1000);
+		});
+
+	</script>
+</body>
+</html>

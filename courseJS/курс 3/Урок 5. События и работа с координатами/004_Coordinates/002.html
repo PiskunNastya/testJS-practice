@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Координаты</title>
+    <script>
+    window.onload = function(e) {
+        var buttonTest = document.getElementById("buttontest");
+        buttonTest.addEventListener("click", function () {
+            var rectangle = this.getBoundingClientRect();
+            console.log(rectangle);
+        });
+    };
+    </script>
+</head>
+<body>
+    <input id="buttontest" type="button" value="getBoundingClientRect()"/>
+</body>
+</html>

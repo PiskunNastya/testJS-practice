@@ -1,0 +1,19 @@
+<!-- preventDefault - функция отменяющая действие по умолчанию для события -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>preventDefault</title>
+</head>
+<body>
+    <a id="parent" href="#">parent</a>
+    <script>
+       var anchor = document.querySelector('a');
+       anchor.addEventListener('click', preventDefaultHandler);
+       function preventDefaultHandler(event) {
+           console.log(event.target.tagName);
+           event.preventDefault();
+       }
+    </script>
+</body>
+</html>

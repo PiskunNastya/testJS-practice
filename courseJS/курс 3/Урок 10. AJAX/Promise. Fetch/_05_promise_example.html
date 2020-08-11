@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Promise example</title>
+</head>
+<body>
+	<div id="log"></div>
+	<button onclick="testPromise()">Push</button>
+	
+	<script type="text/javascript">
+		var promiseCount = 0;
+		
+		function testPromise() {
+		  var thisPromiseCount = ++promiseCount;
+
+		  var log = document.getElementById('log');
+		  log.insertAdjacentHTML('beforeend', thisPromiseCount + 
+		      ') Запуск (запуск синхронного кода)<br>');
+
+		  // Создаём обещание, возвращающее 'result' (по истечении 3-х секунд)
+		  var p1 = new Promise(
+		    function(resolve, reject) {       
+		      log.insertAdjacentHTML('beforeend', thisPromiseCount + 
+		          ') Запуск обещания (запуск асинхронного кода)<br>');
+		      window.setTimeout(
+		        function() {
+		          resolve(thisPromiseCount);
+		        }, Math.random() * 2000 + 1000);
+		    });
+
+		  p1
+			.then(
+				function(val) {
+				  log.insertAdjacentHTML('beforeend', val +
+					') Обещание выполнено (асинхронный код завершён)<br>');
+				})
+				  .catch(function (err) {
+					  console.log(err);
+				  });
+
+
+		  log.insertAdjacentHTML('beforeend', thisPromiseCount + 
+		      ') Обещание создано (синхронный код завершён)<br>');
+		}
+	</script>
+</body>
+</html>
