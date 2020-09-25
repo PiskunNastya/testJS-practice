@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            background-color: crimson;
+            display: flex;
+            justify-content: center;
+        }
+
+        .blockAll {
+            width: 200px;
+            background-color: cyan;
+            margin: 1px;
+            border-radius: 5px;
+        }
+
+        .block_h3 {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block">
+        <div class="blockAll">
+            <h3 class="block_h3">Ищете надежного бухгалтера?</h3>
+            <ul class="block_ol">
+                <li class="block_li">Вам нужен надежный и опытный специалист?</li>
+                <li class="block_li">Вы устали от ошибок непрофессионалов?</li>
+            </ul>
+        </div>
+
+        <div class="blockAll">
+            <h3 class="block_h3">Хотите уделять время бизнесу, а не рутине?</h3>
+            <ul class="block_ol">
+                <li class="block_li">Вас отвлекают финансовые вопросы бизнеса?</li>
+                <li class="block_li">Вы хотите спокойно делать свое дело?</li>
+            </ul>
+        </div>
+
+        <div class="blockAll">
+            <h3 class="block_h3">Нет времени на налоговые вопросы?</h3>
+            <ul class="block_ol">
+                <li class="block_li">Вы не хотите проблем с налоговой?</li>
+                <li class="block_li">У вас нет времени заниматься этим серьезно?</li>
+            </ul>
+        </div>
+
+        <div class="blockAll">
+            <h3 class="block_h3">Вы хотите избежать штрафов?</h3>
+            <ul class="block_ol">
+                <li class="block_li">Вы не знаете как избежать штрафов?</li>
+                <li class="block_li">Вас пугают финансовые вопросы с бухгалтерией?</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+
+&nbsp;
+
+&nbsp;
+<table style="width: 100%;">
+    <thead>
+        <tr>
+            <th>
+                <h6>Единый налог</h6>
+                <h6>(без НДС)</h6>
+            </th>
+            <th>
+                <h6>Единый налог</h6>
+                <h6>с НДС</h6>
+            </th>
+            <th>
+                <h6>Общая система</h6>
+                <h6>(без НДС)</h6>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: center;">
+                <h6>2 500,00</h6>
+            </td>
+            <td style="text-align: center;">
+                <h6>3 500,00</h6>
+            </td>
+            <td style="text-align: center;">
+                <h6>3 000,00</h6>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <h6>2 500,00</h6>
+            </td>
+            <td style="text-align: center;">
+                <h6>3 500,00</h6>
+            </td>
+            <td style="text-align: center;">
+                <h6>3 000,00</h6>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<script>
+    const scroller = document.getElementById('border'),
+          firstImg = document.getElementById('first-img'),
+          secondImg = document.getElementById('second-img');
+
+secondImg.style.width = '600px';
+
+scroller.addEventListener('mousedown', (e) => {
+  document.documentElement.style.cursor = 'w-resize';
+  slider.onmousemove = (event) => {
+    let x = event.offsetX;
+    x > 1200 ? x = 1201 :
+      x < 10 ? x = 10 : x = x;
+    scroller.style.left = x + 'px';
+    secondImg.style.width = (x - 1) + 'px';
+  };
+});
+
+document.addEventListener('mouseup', (e) => {
+  document.documentElement.style.cursor = 'default';
+  slider.onmousemove = (ev) => {
+    return false;
+  };
+});
+
+
+
+
+const scroller  = document.getElementById('border'),
+      firstImg  = document.getElementById('first-img'),
+      secondImg = document.getElementById('second-img');
+let flag = true; // флаг фиксирует состояние события mousedown
+
+secondImg.style.width = '600px';
+
+scroller.addEventListener('mousedown', (e) => {
+  flag = true;
+  window.onmousemove = true;
+  scroller.style.pointerEvents = 'none'; // отвязываемся от элемента
+  document.documentElement.style.cursor = 'w-resize';
+    window.onmousemove = (event) => { // слушаем событие по всему объекту window
+      if (flag) {
+        let x = event.offsetX;
+        scroller.style.left = x + 'px';
+        secondImg.style.width = x + 'px';
+      }
+    };
+});
+
+document.addEventListener('mouseup', (e) => {
+  flag = false;
+  scroller.style.pointerEvents = 'initial';
+  document.documentElement.style.cursor = 'default';
+  slider.onmousemove = (ev) => {
+      return false;
+  };
+});
+</script>
+
+</html>

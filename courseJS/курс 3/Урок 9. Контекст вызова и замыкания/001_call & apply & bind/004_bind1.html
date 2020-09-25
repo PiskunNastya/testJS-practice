@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>001_bind</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function foo(phrase) {
+			console.group(`${phrase} ${this.name}`)
+			console.log(`Name: ${this.name}`)
+			console.log(`Age: ${this.age}`)
+			console.groupEnd()
+		}
+
+		var person = {
+			name: 'Bob',
+			age: 42
+		}
+
+		foo.bind(person)('About');
+		foo.call(person, 'About');
+		foo.apply(person, ['About']);
+
+</script>
+</body>
+</html>

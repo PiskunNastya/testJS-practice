@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>001_bind</title>
+	<!-- Простейшим способом использования bind() является создание функции, которая,
+	вне зависимости от способа её вызова, вызывается с определённым значением this. -->
+</head>
+<body>
+	<script type="text/javascript">
+		// создание привязанной функции
+		this.x = 9;
+		var module = {
+			x: 81,
+			getX: function() { return this.x }
+		};
+
+		alert(module.getX());
+
+		var getX = module.getX;
+		alert(getX());
+
+		// создаём новую функцию с this, привязанным к module
+		var boundGetX = getX.bind(module);
+		alert(boundGetX());
+</script>
+</body>
+</html>

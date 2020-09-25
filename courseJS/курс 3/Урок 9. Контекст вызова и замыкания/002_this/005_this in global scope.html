@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>001_this example</title>
+	<script type="text/javascript">
+		// В глобальном контексте, если код выполняется в браузере, все переменные и функции добавляются к глобальному объекту window.
+		// Поэтому при вызове функции в глобальном контексте значением переменной this будет ссылка на глобальный объект window.
+		
+		var name = 'John Smith';
+
+		function showName() {
+		    console.log(this.name);
+		}
+
+		var user = {
+		    name: 'Ellen Simons',  
+		    showName: function() {  
+		        console.log(this.name);  
+		    }
+		}
+
+		showName();        // John Smith
+		window.showName(); // John Smith
+		user.showName();   // Ellen Simons
+	</script>
+</head>
+<body>
+
+</body>
+</html>

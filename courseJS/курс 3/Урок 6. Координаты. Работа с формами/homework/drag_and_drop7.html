@@ -21,8 +21,8 @@
 
 
         function eventMousedown(event) {
-            var clickCoordinaresSquared_X = event.offsetX;      // узнаем координаты клика относительно радительского элемента
-            var clickCoordinaresSquared_Y = event.offsetY;      // узнаем координаты клика относительно радительского элемента
+            var clickCoordinaresSquared_X = event.offsetX;      // узнаем координаты клика относительно рoдительского элемента
+            var clickCoordinaresSquared_Y = event.offsetY;      // узнаем координаты клика относительно рoдительского элемента
 
             document.addEventListener('mouseup', function() {
                 document.removeEventListener('mousemove', eventMousemove);      // удаляем обработчик события 

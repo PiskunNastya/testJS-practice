@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Использование bind() при каррировании</title>
+	<script type="text/javascript">
+		// Таким образом, с помощью функции bind() мы можем получать из текущей функции различные функции от меньшего числа параметров. 
+
+		// Определим функцию от трех переменных
+		function greet(gender, age, name) {
+		    // if a male, use Mr., else use Ms.
+		    var salutation = gender === "male" ? "Mr. " : "Ms. ";
+
+		    if (age > 25) {
+		    	return "Hello, " + salutation + name + ".";
+		    }
+		    else {
+		    	return "Hey, " + name + ".";
+		    }
+		}
+
+		// C помощью bind() мы можем получать функции от меньшего числа переменных
+		var greetAnAdultMale = greet.bind(null, "male", 45);
+		console.log(greetAnAdultMale("John Hartlove")); // "Hello, Mr. John Hartlove."
+
+		var greetAYoungster = greet.bind(null, "", 16);
+		console.log(greetAYoungster("Alex")); // "Hey, Alex."
+		console.log(greetAYoungster("Emma Waterloo")); // "Hey, Emma Waterloo."
+</script>
+</head>
+<body>
+
+</body>
+</html>

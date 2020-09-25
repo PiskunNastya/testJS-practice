@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>006_Использование метода в качестве функции обратного вызова</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<button>Click!</button>
+	<script type="text/javascript">
+		// При использовании этого метода, мы предполагаем, что объектом this в данном случае будет выступать объект users.
+		// Но когда мы передаем этот метод в качестве функции обратного вызова — значением объекта this будет объект кнопки.
+		// Этот момент не вполне очевиден, однако вызывает неприятные ошибки.
+
+		// Если мы хотим, чтобы this.data действительно указывал на свойство data объекта users — мы должны использовать один из методов bind(),
+		// apply() или call() как раз для того, чтобы явно задать значение this.
+
+		var users = {
+			data: [
+				{name: 'John Smith'},
+				{name: 'Ellen Simons'}
+			],
+
+			clickHandler: function(event) {
+				console.log(this.data[0].name);
+			}
+		};
+
+		// $('button').click(users.clickHandler); // users.data is undefined
+
+		$('button').click(users.clickHandler.bind(users));
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!--
+    Стрелочная функция не создаёт свой контекст исполнения, а заимствует this из внешней функции, в которой она определена.
+-->
+
+<html>
+    <head>
+        <title>This in arrow functions</title>
+        <script>
+            // class Coords {
+            //     constructor(x, y) {
+            //         this.x = x;
+            //         this.y = y;
+            //     }
+            //     log() {
+            //         // debugger;
+            //         // this — это контекст, в котором определена стрелочная функция
+            //         console.log(this === myCoord);
+            //         setTimeout(()=> {
+            //             console.log(this === myCoord);
+            //             console.log(this.x + ':' + this.y);
+            //         }, 1000);
+            //     }
+            // }
+            // var myCoord = new Coords(4, 20);
+            // myCoord.log();
+
+            var bar = {
+                name: 'arrow function',
+                foo: () => {
+                    console.log(this)
+                }
+            }
+            
+            var obj = {
+                name: 'regular function',
+                f: function() {
+                    console.log(this)
+                }
+            }
+
+            bar.foo();
+            obj.f();
+        </script>
+    </head>
+    <body></body>
+</html>

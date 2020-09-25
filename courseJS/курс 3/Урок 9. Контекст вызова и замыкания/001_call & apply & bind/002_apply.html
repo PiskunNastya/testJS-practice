@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>apply()</title>
+	<script type="text/javascript">
+		var person = {
+			fullName: function() {
+				return this.firstName + " " + this.lastName;
+			}
+		};
+
+		var person1 = {
+			firstName: "Mary",
+			lastName: "Doe"
+		};
+		console.log(person.fullName.apply(person1));
+
+		/**********************************************************/
+
+		var person2 = {
+			fullName: function(city, country) {
+				return this.firstName + " " + this.lastName + ", " + city + ", " + country;
+			}
+		};
+
+		var person3 = {
+			firstName:"John",
+			lastName: "Doe"
+		};
+		console.log(person2.fullName.apply(person3, ["Oslo", "Norway"]));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

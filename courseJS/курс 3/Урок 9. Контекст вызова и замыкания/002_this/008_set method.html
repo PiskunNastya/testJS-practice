@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>08_Присваивание метода переменной</title>
+	<script type="text/javascript">
+		// Когда мы присваиваем метод переменной — this снова ведет себя не совсем так, как мы ожидаем.
+
+		// Переменная в глобальной области видимости
+		var data = [
+			{name: 'John Smith'},
+			{name: 'Ellen Simons'}
+		];
+
+		var users = {
+			data: [
+				{name: 'Michael Fox'},
+				{name: 'Emmie Adams'}
+			],
+			showFirst: function() {
+				console.log(this.data[0].name);
+			}
+		};
+
+		var showFirstUser = users.showFirst;
+		users.showFirst()
+		showFirstUser(); // John Smith - из глобальной области видимости
+
+		// когда мы вызываем функцию showFirstUser() значением this будет глобальный объект window, соответственно,
+		// значение data будет взято из глобальной области видимости.
+
+		// Решением данной проблемы может быть использование метода bind() для явного указания значения this:
+
+		var showFirstUser1 = users.showFirst.bind(users);
+		showFirstUser1(); // Michael Fox
+</script>
+</head>
+<body>
+
+</body>
+</html>

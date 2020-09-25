@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		// Свойства-аксессоры представлены методами: «геттер» – для чтения и «сеттер» – для записи.
+		// При литеральном объявлении объекта они обозначаются get и set
+
+		var obj = {
+		  get propName() {
+		    // геттер, срабатывает при чтении obj.propName
+			console.log(this.name);
+		  },
+
+		  set propName(value) {
+		    // сеттер, срабатывает при записи obj.propName = value
+			this.name = value
+		  }
+		};
+ 
+		obj.propName('Yegor');
+		obj.propName();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

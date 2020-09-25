@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<script type="text/javascript">
+	var user = {
+		firstName: "Вася",
+		surname: "Петров"
+	};
+
+	Object.defineProperty(user, "fullName", {
+
+		get: function() {
+			return 'Гражданин ' + this.firstName + ' ' + this.surname;
+		},
+
+		set: function(value) {
+			var split = value.split(' ');
+			this.firstName = split[0];
+			this.surname = split[1];
+		}
+	});
+
+	user.fullName = "Петя Иванов";
+	//
+	// alert( user.firstName ); // Петя
+	// alert( user.surname ); // Иванов
+</script>
+<body>
+</body>
+</html>

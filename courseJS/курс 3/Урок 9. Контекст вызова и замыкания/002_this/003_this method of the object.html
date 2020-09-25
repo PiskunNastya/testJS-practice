@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>003_this method of the object</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		// Если функция запущена как свойство объекта, то в this будет ссылка на этот объект.
+		// При этом совершенно неважно, откуда эта функция взялась. Важно лишь, какой перед func стоит объект.
+
+		var vasya = {
+			name: "Василий"
+		};
+
+		var dima = {
+		    name: "Дмитрий"
+		};
+
+		var say = function() {
+		    alert("Привет, я "+ this.name)
+		};
+
+		vasya.sayHi = say;
+		dima.sayHi = say;
+
+		vasya.sayHi();   // =>  "Привет, я Василий"
+		dima.sayHi();    // => "Привет, я Дмитрий"
+		
+		dima['sayHi']();
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>002_this in constructor</title>
+	<script type="text/javascript">
+		// Если функция вызывается через new как конструктор объекта, то this ставится на создаваемый объект
+
+		function Animal(name) {
+		    this.name = name
+		}
+
+		var dog = new Animal('Hatiko');
+		var cat = new Animal('Tom');
+
+		console.log(dog.name)
+		console.log(cat.name);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

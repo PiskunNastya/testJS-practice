@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>007_Использование this внутри замыкания 1</title>
+	<script type="text/javascript">
+		// Другой случай, когда могут возникать проблемы с использованием this — когда мы используем внутреннюю функцию (замыкание).
+		// Здесь важно иметь в виду, что замыкание не может получить доступ к значению this внешней функции (в отличии от других переменных внешней функции),
+		// т.к. имеет собственное значение this.
+
+		var users = {
+			helloText: 'Hello',
+			data: [
+				{name: 'John Smith'},
+				{name: 'Ellen Simons'}
+			],
+			clickHandler: function() {
+				this.data.forEach(function (user) {
+					console.log(this.helloText + ', ' + user.name);
+				})
+			}
+		};
+		users.clickHandler();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

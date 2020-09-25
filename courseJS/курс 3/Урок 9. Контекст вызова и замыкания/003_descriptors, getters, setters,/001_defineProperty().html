@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+	//Метод Object.defineProperty() определяет новое или изменяет существующее свойство непосредственно на объекте, возвращая этот объект.
+
+	// Object.defineProperty(obj, prop, descriptor)
+
+	//Аргументы:
+
+	// obj - Объект, в котором объявляется свойство.
+	// prop- Имя свойства, которое нужно объявить или модифицировать.
+	// descriptor - Дескриптор – объект, который описывает поведение свойства. В нём могут быть следующие поля:
+
+		// value – значение свойства, по умолчанию undefined
+		// writable – значение свойства можно менять, если true. По умолчанию false.
+		// configurable – если true, то свойство можно удалять, а также менять его в дальнейшем при помощи новых вызовов defineProperty. По умолчанию false.
+		// enumerable – если true, то свойство просматривается в цикле for..in и методе Object.keys(). По умолчанию false.
+		// get – функция, которая возвращает значение свойства. По умолчанию undefined.
+		// set – функция, которая записывает значение свойства. По умолчанию undefined.
+
+	// Чтобы избежать конфликта, запрещено одновременно указывать значение value и функции get/set.
+	// Либо значение, либо функции для его чтения-записи, одно из двух.
+	// Также запрещено и не имеет смысла указывать writable при наличии get/set-функций.
+	"use strict";
+
+	var user = {};
+
+	// 1. простое присваивание
+	user.name = "Вася";
+
+	// 2. указание значения через дескриптор
+	Object.defineProperty(user, "name", { 
+		value: "Вася", 
+		configurable: true, 
+		writable: true, 
+		enumerable: true 
+	});
+
+	var user = {};
+
+	Object.defineProperty(user, "name", {
+	  value: "Василий",
+	  writable: false, // запретить присвоение "user.name="
+	  configurable: false // запретить удаление "delete user.name"
+	});
+
+	// Теперь попытаемся изменить это свойство.
+	// в strict mode присвоение "user.name=" вызовет ошибку
+	user.name = "Петя";
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>call()</title>
+	<script type="text/javascript">
+
+		function sayHi() {
+		  alert(this.name);
+		}
+
+		let user = { name: "John" };
+		let admin = { name: "Admin" };
+
+		// используем 'call' для передачи различных объектов в качестве 'this'
+		sayHi.call( user ); // John
+		sayHi.call( admin ); // Admin
+
+		/**************************************************/
+
+		// используем call для вызова say с заданным контекстом и фразой:
+		function say(phrase, symbol) {
+		  alert(this.name + ': ' + phrase + symbol);
+		}
+
+		let user1 = { name: "Bill" };
+
+		// 'user' становится 'this', и "Hello" становится первым аргументом
+		say.call( user1, "Hello" , "!");
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

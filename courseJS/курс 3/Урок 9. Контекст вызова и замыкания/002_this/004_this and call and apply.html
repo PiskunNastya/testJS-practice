@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>001_this example</title>
+	<script type="text/javascript">
+		// Функцию можно вызвать, используя методы call и apply.
+		// При таком вызове this будет установлен в obj.
+		// Оба метода работают одинаково, но для call аргументы подставляются в вызов, а для apply - передается массив.
+
+		function sum(a,b) {
+		    this.c = a + b
+		}
+
+		var obj = {};
+
+		sum.call(obj, 1,2);
+		// или
+		// sum.apply(obj, [1,2]);
+
+		alert(obj.c);   // => 3
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        obj1 = {
+            a: 1,
+            b: 2,
+            c: null
+        }
+
+        obj2 = {
+            a: 10,
+            b: 20,
+            c: null,
+            x: function ololo() {
+                this.c = this.a + this.b;
+            }
+        }
+
+        obj2.x();
+        obj2.x.call(obj1);
+
+
+    </script>
+</body>
+</html>

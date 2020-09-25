@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>009_пользование this при заимствовании методов</title>
+	<script type="text/javascript">
+		// Заимствование методов — это довольно распространенная, экономящая время практика среди JavaScript-разработчиков. 
+
+		var customer = {
+			name: 'Ellen',
+			birthDay: '1988-02-29',
+			age: null
+		};
+
+		var manager = {
+			name: 'John',
+			birthDay: '1984-01-11',
+			age: null,
+			getAge: function() {
+				var birthDate = new Date(this.birthDay);
+				// var birthDate = new Date();
+				// console.log(birthDate);
+
+				this.age = (new Date).getFullYear() - birthDate.getFullYear();
+				
+				// this.age = new Date().getFullYear() - birthDate.getFullYear();
+			}
+		};
+
+		customer.age = manager.getAge();
+
+		console.log(customer.age); // age = undefined
+		console.log(manager.age);  // age = 36
+
+		// В данном примере функция manager.getAge() вызывается в контексте объекта manager, соответственно значение свойства age будет установлено у
+		// объекта manager.
+
+		// Чтобы избежать подобных проблем, можно воспользоваться методом apply()
+
+		manager.getAge.apply(customer);
+
+		console.log(customer.age); // age = 26
+		console.log(manager.age);  // age = 36
+</script>
+</head>
+<body>
+
+</body>
+</html>

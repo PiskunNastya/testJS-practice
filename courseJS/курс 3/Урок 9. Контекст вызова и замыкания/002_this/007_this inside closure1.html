@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>007_Использование this внутри замыкания 2</title>
+	<script type="text/javascript">
+		// В данном примере мы ожидаем, что значением this будет объект users — однако внутри замыкания свое значение this,
+		// в данном примере — глобальный объект window. Значением this.helloText будет undefined.
+
+		// Как избежать ошибки при использовании this в замыканиях?
+		// Очень просто — проинициализировать значением this другую переменную во внешней функции и использовать ее в замыкании
+
+		var users = {
+			helloText: 'Hello',
+			data: [
+				{name: 'John Smith'},
+				{name: 'Ellen Simons'}
+			],
+			clickHandler: function() {
+				var helloText = this.helloText;
+
+				this.data.forEach(function (user) {
+					console.log(helloText + ', ' + user.name);
+				})
+			}
+		}
+		users.clickHandler();
+	</script>
+</head>
+<body>
+
+</body>
+</html>
